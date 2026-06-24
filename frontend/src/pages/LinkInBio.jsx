@@ -5,16 +5,16 @@ import {
   FacebookIcon,
   TikTokIcon,
   YouTubeIcon,
-  WhatsAppIcon,
   MailIcon,
   ArrowRightIcon,
-  SearchEyeIcon,
 } from "@/components/icons/SocialIcons";
 
 const PROFILE_IMG =
   "https://lh3.googleusercontent.com/d/1LRCPLtd5KMYISHkdnsMKi2vceWmKTctC=w800";
 const GLOBE_IMG =
   "https://lh3.googleusercontent.com/d/1sRtkCgtHMOzEkRmelMrWwyrCGwJTzUzD=w800";
+const TOOLS_IMG =
+  "https://lh3.googleusercontent.com/d/182t1yhYgVBBVOylb8Tl3kpjXpv6OvWwa=w800";
 
 const SOCIALS = [
   {
@@ -193,9 +193,7 @@ export default function LinkInBio() {
             ctaLabel="Ver ferramentas"
             testid="card-ferramentas"
             rightSlot={
-              <IconBox bg="bg-gradient-to-br from-zinc-800 to-zinc-900">
-                <SearchEyeIcon size={42} className="text-[#FF7A1A]" />
-              </IconBox>
+              <ImageBox src={TOOLS_IMG} alt="Ferramentas de investigação" />
             }
           />
 
@@ -212,27 +210,6 @@ export default function LinkInBio() {
               </IconBox>
             }
           />
-
-          {/* Support card */}
-          <a
-            href="https://wa.me/?text=Ol%C3%A1%20Davy%2C%20sou%20aluno%20e%20preciso%20de%20ajuda"
-            target="_blank"
-            rel="noopener noreferrer"
-            data-testid="card-suporte"
-            className="card-press fade-up rounded-[24px] bg-[#E6F4EA] p-4 sm:p-5 flex items-center gap-4 no-underline"
-          >
-            <div className="shrink-0">
-              <WhatsAppIcon size={48} />
-            </div>
-            <div className="min-w-0">
-              <h3 className="text-[16px] sm:text-[17px] font-bold text-zinc-900 leading-tight">
-                Suporte aos Alunos
-              </h3>
-              <p className="text-[13px] sm:text-[13.5px] text-zinc-700 leading-snug mt-0.5">
-                Clique aqui se já é aluno e precisa de ajuda.
-              </p>
-            </div>
-          </a>
         </section>
 
         {/* Footer */}
