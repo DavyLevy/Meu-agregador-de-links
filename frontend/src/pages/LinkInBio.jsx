@@ -15,6 +15,8 @@ const GLOBE_IMG =
   "https://lh3.googleusercontent.com/d/1sRtkCgtHMOzEkRmelMrWwyrCGwJTzUzD=w800";
 const TOOLS_IMG =
   "https://lh3.googleusercontent.com/d/182t1yhYgVBBVOylb8Tl3kpjXpv6OvWwa=w800";
+const MIND7_IMG =
+  "https://customer-assets.emergentagent.com/job_link-in-bio-7/artifacts/ul2ff3pv_images.png";
 
 const SOCIALS = [
   {
@@ -133,7 +135,8 @@ export default function LinkInBio() {
               src={PROFILE_IMG}
               alt="Davy Levy"
               referrerPolicy="no-referrer"
-              className="relative w-[112px] h-[112px] rounded-full object-cover ring-4 ring-white shadow-[0_10px_30px_-12px_rgba(0,0,0,0.35)]"
+              style={{ objectPosition: "50% 22%" }}
+              className="relative w-[128px] h-[128px] rounded-full object-cover ring-4 ring-white shadow-[0_10px_30px_-12px_rgba(0,0,0,0.35)]"
             />
           </div>
 
@@ -194,6 +197,26 @@ export default function LinkInBio() {
             testid="card-ferramentas"
             rightSlot={
               <ImageBox src={TOOLS_IMG} alt="Ferramentas de investigação" />
+            }
+          />
+
+          {/* Card 3 — MIND7 */}
+          <DarkCardLink
+            external
+            href="https://mind-7.org/?r=DAVYLEVY_"
+            title="MIND7"
+            description="Descubra informações de qualquer pessoa."
+            ctaLabel="Acessar Mind7"
+            testid="card-mind7"
+            rightSlot={
+              <div className="w-[96px] h-[96px] sm:w-[108px] sm:h-[108px] rounded-2xl bg-white ring-1 ring-white/5 flex items-center justify-center overflow-hidden">
+                <img
+                  src={MIND7_IMG}
+                  alt="MIND7"
+                  className="w-[82%] h-[82%] object-contain"
+                  loading="lazy"
+                />
+              </div>
             }
           />
 
