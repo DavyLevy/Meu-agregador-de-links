@@ -14,8 +14,6 @@ const PROFILE_IMG =
   "https://lh3.googleusercontent.com/d/1LRCPLtd5KMYISHkdnsMKi2vceWmKTctC=w800";
 const GLOBE_IMG =
   "https://lh3.googleusercontent.com/d/1sRtkCgtHMOzEkRmelMrWwyrCGwJTzUzD=w800";
-const TOOLS_IMG =
-  "https://lh3.googleusercontent.com/d/182t1yhYgVBBVOylb8Tl3kpjXpv6OvWwa=w800";
 const MIND7_IMG =
   "https://customer-assets.emergentagent.com/job_link-in-bio-7/artifacts/ul2ff3pv_images.png";
 
@@ -189,19 +187,7 @@ export default function LinkInBio() {
             rightSlot={<ImageBox src={GLOBE_IMG} alt="Globo TV grátis" />}
           />
 
-          {/* Card 2 — FERRAMENTAS DE INVESTIGAÇÃO */}
-          <DarkCardLink
-            to="/ferramentas"
-            title="FERRAMENTAS DE INVESTIGAÇÃO"
-            description="Acesse um conjunto curado de ferramentas pra investigar e se proteger online."
-            ctaLabel="Ver ferramentas"
-            testid="card-ferramentas"
-            rightSlot={
-              <ImageBox src={TOOLS_IMG} alt="Ferramentas de investigação" />
-            }
-          />
-
-          {/* Card 3 — MIND7 */}
+          {/* Card 2 — MIND7 */}
           <DarkCardLink
             external
             href="https://mind-7.org/?r=DAVYLEVY_"
@@ -221,7 +207,7 @@ export default function LinkInBio() {
             }
           />
 
-          {/* Card 4 — APPS PARA RENDA EXTRA */}
+          {/* Card 3 — APPS PARA RENDA EXTRA */}
           <DarkCardLink
             to="/apps"
             title="APPS PARA RENDA EXTRA"
@@ -235,12 +221,12 @@ export default function LinkInBio() {
             }
           />
 
-          {/* Card 5 — MEUS VÍDEOS */}
+          {/* Card 4 — MEUS VÍDEOS */}
           <DarkCardLink
             to="/videos"
             title="MEUS VÍDEOS"
-            description="Os reels mais quentes do Instagram, reunidos pra você assistir agora."
-            ctaLabel="Assistir reels"
+            description="Reels organizados por categoria + ferramentas usadas em cada tutorial."
+            ctaLabel="Ver vídeos"
             testid="card-videos"
             rightSlot={
               <IconBox bg="bg-white/95">

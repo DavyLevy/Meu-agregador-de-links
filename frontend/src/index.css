@@ -121,6 +121,15 @@ code {
     transform: translateY(-2px);
 }
 
+/* Hide scrollbar on tab bars */
+.scrollbar-hide {
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+}
+.scrollbar-hide::-webkit-scrollbar {
+    display: none;
+}
+
 [data-debug-wrapper="true"] {
     display: contents !important;
 }
