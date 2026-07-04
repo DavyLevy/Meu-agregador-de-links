@@ -3,37 +3,39 @@ import { Link } from "react-router-dom";
 import {
   ChevronLeftIcon,
   ArrowRightIcon,
-  SearchEyeIcon,
+  AppleIcon,
 } from "@/components/icons/SocialIcons";
 
-const TOOLS = [
+const ACCENT = "#F5F5F7";
+
+const IOS_APPS = [
   {
-    name: "DeHashed",
-    description:
-      "Verifique se seus dados pessoais vazaram em grandes brechas de segurança.",
-    href: "https://dehashed.com",
-    accent: "#FF6B6B",
-    testid: "tool-dehashed",
+    name: "Fiverr",
+    description: "Marketplace global de serviços freelancers.",
+    href: "https://apps.apple.com/br/app/fiverr-servi%C3%A7os-freelance/id346080608",
+    testid: "ios-fiverr",
   },
   {
-    name: "Jimpl",
-    description:
-      "Extraia metadados (EXIF) de qualquer foto pra descobrir local, câmera e mais.",
-    href: "https://jimpl.com",
-    accent: "#7C5CFF",
-    testid: "tool-jimpl",
+    name: "Closeer",
+    description: "Trabalhos por hora, perto de você.",
+    href: "https://apps.apple.com/br/app/closeer-trabalho-freelancer/id1440858117",
+    testid: "ios-closeer",
   },
   {
-    name: "Sync.me",
-    description:
-      "Identifique chamadas desconhecidas e descubra quem está por trás do número.",
-    href: "https://sync.me/pt-br/",
-    accent: "#22C55E",
-    testid: "tool-syncme",
+    name: "Bravo Eventos",
+    description: "Freelas em eventos, buffets e produções.",
+    href: "https://apps.apple.com/br/app/bravo-eventos/id6465486694",
+    testid: "ios-bravo",
+  },
+  {
+    name: "Estaff",
+    description: "Freelancer em eventos e serviços temporários.",
+    href: "https://apps.apple.com/br/app/estaff-para-freelancers/id6470943542",
+    testid: "ios-estaff",
   },
 ];
 
-const ToolCard = ({ name, description, href, accent, testid }) => (
+const AppCard = ({ name, description, href, testid }) => (
   <a
     data-testid={testid}
     href={href}
@@ -43,10 +45,10 @@ const ToolCard = ({ name, description, href, accent, testid }) => (
   >
     <div className="flex items-start gap-4">
       <div
-        className="shrink-0 w-12 h-12 rounded-2xl flex items-center justify-center ring-1 ring-white/10"
-        style={{ backgroundColor: `${accent}22` }}
+        className="shrink-0 w-12 h-12 rounded-2xl flex items-center justify-center ring-1 ring-white/10 text-white"
+        style={{ backgroundColor: "#1F1F22" }}
       >
-        <SearchEyeIcon size={22} className="" style={{ color: accent }} />
+        <AppleIcon size={26} className="text-white" />
       </div>
       <div className="flex-1 min-w-0">
         <h3 className="text-[18px] font-bold leading-tight tracking-tight">
@@ -57,12 +59,13 @@ const ToolCard = ({ name, description, href, accent, testid }) => (
         </p>
         <div className="mt-4">
           <span
-            className="cta-pill inline-flex items-center gap-1.5 rounded-full bg-[#FF7A1A] hover:bg-[#FF8A33] text-white text-[12.5px] font-semibold px-4 py-2.5 leading-none"
+            className="cta-pill inline-flex items-center gap-1.5 rounded-full text-black text-[12.5px] font-semibold px-4 py-2.5 leading-none"
             style={{
-              boxShadow: `0 8px 20px -8px ${accent}88`,
+              backgroundColor: ACCENT,
+              boxShadow: `0 8px 20px -8px rgba(255,255,255,0.35)`,
             }}
           >
-            Abrir {name}
+            Abrir na App Store
             <ArrowRightIcon size={14} />
           </span>
         </div>
@@ -71,13 +74,13 @@ const ToolCard = ({ name, description, href, accent, testid }) => (
   </a>
 );
 
-export default function Ferramentas() {
+export default function AppsIOS() {
   return (
     <div className="page-shell">
-      <main className="page-inner" data-testid="ferramentas-page">
+      <main className="page-inner" data-testid="apps-ios-page">
         <Link
-          to="/"
-          data-testid="back-to-home"
+          to="/apps"
+          data-testid="back-to-apps"
           className="inline-flex items-center gap-1 text-[13px] font-medium text-zinc-700 hover:text-black no-underline"
         >
           <ChevronLeftIcon size={18} />
@@ -86,20 +89,19 @@ export default function Ferramentas() {
 
         <header className="mt-5 fade-up">
           <p className="text-[12px] uppercase tracking-[0.18em] text-zinc-500 font-semibold">
-            Davy Levy · OSINT
+            Apps · Renda Extra
           </p>
           <h1 className="mt-2 text-[26px] sm:text-[30px] font-extrabold tracking-tight text-black leading-tight uppercase">
-            FERRAMENTAS DE INVESTIGAÇÃO
+            IOS
           </h1>
           <p className="mt-2 text-[14px] text-zinc-600 leading-snug max-w-[340px]">
-            Três ferramentas que eu uso pra investigar e me proteger. Clique e
-            abre direto no site oficial.
+            Clique para abrir cada app direto na App Store.
           </p>
         </header>
 
         <section className="mt-7 flex flex-col gap-4">
-          {TOOLS.map((t) => (
-            <ToolCard key={t.name} {...t} />
+          {IOS_APPS.map((a) => (
+            <AppCard key={a.name} {...a} />
           ))}
         </section>
 

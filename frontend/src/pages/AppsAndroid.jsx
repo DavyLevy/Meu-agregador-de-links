@@ -3,37 +3,39 @@ import { Link } from "react-router-dom";
 import {
   ChevronLeftIcon,
   ArrowRightIcon,
-  SearchEyeIcon,
+  AndroidIcon,
 } from "@/components/icons/SocialIcons";
 
-const TOOLS = [
+const ACCENT = "#3DDC84";
+
+const ANDROID_APPS = [
   {
-    name: "DeHashed",
-    description:
-      "Verifique se seus dados pessoais vazaram em grandes brechas de segurança.",
-    href: "https://dehashed.com",
-    accent: "#FF6B6B",
-    testid: "tool-dehashed",
+    name: "Fiverr",
+    description: "Marketplace global de serviços freelancers.",
+    href: "https://play.google.com/store/apps/details?id=com.fiverr.fiverr&pcampaignid=web_share",
+    testid: "android-fiverr",
   },
   {
-    name: "Jimpl",
-    description:
-      "Extraia metadados (EXIF) de qualquer foto pra descobrir local, câmera e mais.",
-    href: "https://jimpl.com",
-    accent: "#7C5CFF",
-    testid: "tool-jimpl",
+    name: "Closeer",
+    description: "Trabalhos por hora, perto de você.",
+    href: "https://play.google.com/store/apps/details?id=com.closeer.closeer_worker&pcampaignid=web_share",
+    testid: "android-closeer",
   },
   {
-    name: "Sync.me",
-    description:
-      "Identifique chamadas desconhecidas e descubra quem está por trás do número.",
-    href: "https://sync.me/pt-br/",
-    accent: "#22C55E",
-    testid: "tool-syncme",
+    name: "Bravo Eventos",
+    description: "Freelas em eventos, buffets e produções.",
+    href: "https://play.google.com/store/apps/details?id=com.appbravoeventos.bravoapp&pcampaignid=web_share",
+    testid: "android-bravo",
+  },
+  {
+    name: "Estaff",
+    description: "Freelancer em eventos e serviços temporários.",
+    href: "https://play.google.com/store/apps/details?id=com.estaff.appfreela&pcampaignid=web_share",
+    testid: "android-estaff",
   },
 ];
 
-const ToolCard = ({ name, description, href, accent, testid }) => (
+const AppCard = ({ name, description, href, testid }) => (
   <a
     data-testid={testid}
     href={href}
@@ -44,9 +46,9 @@ const ToolCard = ({ name, description, href, accent, testid }) => (
     <div className="flex items-start gap-4">
       <div
         className="shrink-0 w-12 h-12 rounded-2xl flex items-center justify-center ring-1 ring-white/10"
-        style={{ backgroundColor: `${accent}22` }}
+        style={{ backgroundColor: `${ACCENT}22` }}
       >
-        <SearchEyeIcon size={22} className="" style={{ color: accent }} />
+        <AndroidIcon size={26} />
       </div>
       <div className="flex-1 min-w-0">
         <h3 className="text-[18px] font-bold leading-tight tracking-tight">
@@ -57,12 +59,14 @@ const ToolCard = ({ name, description, href, accent, testid }) => (
         </p>
         <div className="mt-4">
           <span
-            className="cta-pill inline-flex items-center gap-1.5 rounded-full bg-[#FF7A1A] hover:bg-[#FF8A33] text-white text-[12.5px] font-semibold px-4 py-2.5 leading-none"
+            className="cta-pill inline-flex items-center gap-1.5 rounded-full text-white text-[12.5px] font-semibold px-4 py-2.5 leading-none"
             style={{
-              boxShadow: `0 8px 20px -8px ${accent}88`,
+              backgroundColor: ACCENT,
+              boxShadow: `0 8px 20px -8px ${ACCENT}aa`,
+              color: "#062E1A",
             }}
           >
-            Abrir {name}
+            Abrir na Play Store
             <ArrowRightIcon size={14} />
           </span>
         </div>
@@ -71,13 +75,13 @@ const ToolCard = ({ name, description, href, accent, testid }) => (
   </a>
 );
 
-export default function Ferramentas() {
+export default function AppsAndroid() {
   return (
     <div className="page-shell">
-      <main className="page-inner" data-testid="ferramentas-page">
+      <main className="page-inner" data-testid="apps-android-page">
         <Link
-          to="/"
-          data-testid="back-to-home"
+          to="/apps"
+          data-testid="back-to-apps"
           className="inline-flex items-center gap-1 text-[13px] font-medium text-zinc-700 hover:text-black no-underline"
         >
           <ChevronLeftIcon size={18} />
@@ -86,20 +90,19 @@ export default function Ferramentas() {
 
         <header className="mt-5 fade-up">
           <p className="text-[12px] uppercase tracking-[0.18em] text-zinc-500 font-semibold">
-            Davy Levy · OSINT
+            Apps · Renda Extra
           </p>
           <h1 className="mt-2 text-[26px] sm:text-[30px] font-extrabold tracking-tight text-black leading-tight uppercase">
-            FERRAMENTAS DE INVESTIGAÇÃO
+            ANDROID
           </h1>
           <p className="mt-2 text-[14px] text-zinc-600 leading-snug max-w-[340px]">
-            Três ferramentas que eu uso pra investigar e me proteger. Clique e
-            abre direto no site oficial.
+            Clique para abrir cada app direto na Google Play Store.
           </p>
         </header>
 
         <section className="mt-7 flex flex-col gap-4">
-          {TOOLS.map((t) => (
-            <ToolCard key={t.name} {...t} />
+          {ANDROID_APPS.map((a) => (
+            <AppCard key={a.name} {...a} />
           ))}
         </section>
 

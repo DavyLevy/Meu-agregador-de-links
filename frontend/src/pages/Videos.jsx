@@ -88,8 +88,8 @@ export default function Videos() {
           <p className="text-[12px] uppercase tracking-[0.18em] text-zinc-500 font-semibold">
             Davy Levy · Instagram
           </p>
-          <h1 className="mt-2 text-[26px] sm:text-[30px] font-extrabold tracking-tight text-black leading-tight">
-            Meus vídeos
+          <h1 className="mt-2 text-[26px] sm:text-[30px] font-extrabold tracking-tight text-black leading-tight uppercase">
+            MEUS VÍDEOS
           </h1>
           <p className="mt-2 text-[14px] text-zinc-600 leading-snug max-w-[340px]">
             Os reels mais quentes selecionados. Cada card abre direto no

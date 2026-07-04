@@ -7,6 +7,7 @@ import {
   YouTubeIcon,
   MailIcon,
   ArrowRightIcon,
+  MoneyIcon,
 } from "@/components/icons/SocialIcons";
 
 const PROFILE_IMG =
@@ -188,10 +189,10 @@ export default function LinkInBio() {
             rightSlot={<ImageBox src={GLOBE_IMG} alt="Globo TV grátis" />}
           />
 
-          {/* Card 2 — Ferramentas de Investigação */}
+          {/* Card 2 — FERRAMENTAS DE INVESTIGAÇÃO */}
           <DarkCardLink
             to="/ferramentas"
-            title="Ferramentas de Investigação"
+            title="FERRAMENTAS DE INVESTIGAÇÃO"
             description="Acesse um conjunto curado de ferramentas pra investigar e se proteger online."
             ctaLabel="Ver ferramentas"
             testid="card-ferramentas"
@@ -220,10 +221,24 @@ export default function LinkInBio() {
             }
           />
 
-          {/* Card 3 — Meus Vídeos */}
+          {/* Card 4 — APPS PARA RENDA EXTRA */}
+          <DarkCardLink
+            to="/apps"
+            title="APPS PARA RENDA EXTRA"
+            description="Ganhe uma grana usando os melhores apps de freela e trampo por conta."
+            ctaLabel="Ver apps"
+            testid="card-apps"
+            rightSlot={
+              <IconBox bg="bg-gradient-to-br from-emerald-500/15 to-emerald-500/5">
+                <MoneyIcon size={44} className="text-emerald-400" />
+              </IconBox>
+            }
+          />
+
+          {/* Card 5 — MEUS VÍDEOS */}
           <DarkCardLink
             to="/videos"
-            title="Meus vídeos"
+            title="MEUS VÍDEOS"
             description="Os reels mais quentes do Instagram, reunidos pra você assistir agora."
             ctaLabel="Assistir reels"
             testid="card-videos"
