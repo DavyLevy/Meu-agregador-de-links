@@ -220,8 +220,9 @@ const VideoCard = ({ video, categoryEmoji }) => (
         </div>
       ) : (
         <div className="rounded-2xl bg-white/[0.03] ring-1 ring-dashed ring-white/10 px-4 py-3">
-          <p className="text-[12px] text-zinc-500 leading-snug">
-            Nenhuma ferramenta cadastrada ainda.
+          <p className="text-[12px] text-zinc-400 leading-snug">
+            Este tutorial usa apenas ferramentas nativas do seu celular — nenhum
+            app extra é necessário.
           </p>
         </div>
       )}
