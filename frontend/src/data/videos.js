@@ -156,6 +156,51 @@ export const CATEGORIES = [
         href: "https://www.instagram.com/reel/DaG0cq7ulcM/?igsh=MXJyeGxjNWF4bjc0dg==",
         tools: [],
       },
+      {
+        id: "6-sites-empresas",
+        title: "6 SITES GRATUITOS QUE AS EMPRESAS NÃO QUEREM QUE VOCÊ SAIBA",
+        href: "",
+        tools: [
+          {
+            name: "ToolFK",
+            description:
+              "Kit de ferramentas online: conversores, calculadoras, geradores.",
+            href: "https://www.toolfk.com/pt",
+            accent: "#FF6B6B",
+          },
+          {
+            name: "NoBG",
+            description: "Remova o fundo de qualquer imagem em segundos.",
+            href: "https://nobg.space/",
+            accent: "#7C5CFF",
+          },
+          {
+            name: "MindMeister",
+            description: "Crie mapas mentais online de graça.",
+            href: "https://encurtador.com.br/gFuA",
+            accent: "#F59E0B",
+          },
+          {
+            name: "DeepSite",
+            description: "Crie sites completos com IA sem escrever código.",
+            href: "https://deepsiteai.com/pt",
+            accent: "#22C55E",
+          },
+          {
+            name: "Open Culture",
+            description:
+              "Milhares de cursos, livros e filmes gratuitos e legais.",
+            href: "https://www.openculture.com/",
+            accent: "#06B6D4",
+          },
+          {
+            name: "CleanPNG",
+            description: "Banco gigante de PNGs transparentes 100% grátis.",
+            href: "https://www.cleanpng.com/",
+            accent: "#EC4899",
+          },
+        ],
+      },
     ],
   },
   {
