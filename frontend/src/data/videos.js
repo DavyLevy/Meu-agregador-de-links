@@ -201,6 +201,48 @@ export const CATEGORIES = [
           },
         ],
       },
+      {
+        id: "5-sites-parecem-ilegais",
+        title: "5 SITES QUE PARECEM SER ILEGAIS MAS NÃO SÃO",
+        href: "",
+        tools: [
+          {
+            name: "10 Minute Mail",
+            description:
+              "E-mail temporário e descartável para evitar SPAM em cadastros.",
+            href: "https://10minutemail.com/",
+            accent: "#F59E0B",
+          },
+          {
+            name: "TinyWow",
+            description:
+              "Mais de 200 ferramentas grátis: PDF, imagem, vídeo, IA e mais.",
+            href: "https://tinywow.com/",
+            accent: "#22C55E",
+          },
+          {
+            name: "Remove.bg",
+            description:
+              "Remove o fundo de qualquer foto em 1 clique, sem instalar nada.",
+            href: "https://www.remove.bg/pt-br",
+            accent: "#EF4444",
+          },
+          {
+            name: "123 Apps",
+            description:
+              "Editor completo online: áudio, vídeo, PDF, conversores.",
+            href: "https://123apps.com/pt/",
+            accent: "#06B6D4",
+          },
+          {
+            name: "AlternativeTo",
+            description:
+              "Ache o substituto grátis de qualquer software pago.",
+            href: "https://alternativeto.net/",
+            accent: "#7C5CFF",
+          },
+        ],
+      },
     ],
   },
   {
