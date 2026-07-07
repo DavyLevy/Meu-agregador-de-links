@@ -136,6 +136,42 @@ export const CATEGORIES = [
         href: "https://www.instagram.com/reel/DaEDZWmKsoA/?igsh=MTNzaXI2OGt5amJ1aw==",
         tools: [],
       },
+      {
+        id: "5-canais-gratis",
+        title:
+          "5 CANAIS QUE EU PAGARIA CARO PARA TER ACESSO, MAS SÃO 100% GRÁTIS",
+        href: "",
+        tools: [
+          {
+            name: "NetMovies",
+            description:
+              "Filmes completos e clássicos legendados no YouTube, de graça.",
+            href: "https://www.youtube.com/@netmovies",
+            accent: "#EF4444",
+          },
+          {
+            name: "freeCodeCamp",
+            description:
+              "Cursos completos de programação, do zero ao avançado.",
+            href: "https://www.youtube.com/@freecodecamp",
+            accent: "#22C55E",
+          },
+          {
+            name: "Diolinux",
+            description:
+              "O canal referência sobre Linux, open source e tecnologia.",
+            href: "https://www.youtube.com/@Diolinux",
+            accent: "#F59E0B",
+          },
+          {
+            name: "Guia Anônima",
+            description:
+              "Privacidade, segurança digital e OSINT em português.",
+            href: "https://www.youtube.com/@guianonima",
+            accent: "#7C5CFF",
+          },
+        ],
+      },
     ],
   },
   {
