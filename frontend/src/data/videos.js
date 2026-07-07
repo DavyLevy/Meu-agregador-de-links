@@ -170,6 +170,13 @@ export const CATEGORIES = [
             href: "https://www.youtube.com/@guianonima",
             accent: "#7C5CFF",
           },
+          {
+            name: "Asimov Academy",
+            description:
+              "Python, ciência de dados e programação aplicada ao mercado.",
+            href: "https://www.youtube.com/@AsimovAcademy",
+            accent: "#06B6D4",
+          },
         ],
       },
     ],
