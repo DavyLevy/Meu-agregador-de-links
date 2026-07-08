@@ -300,6 +300,41 @@ export const CATEGORIES = [
         href: "https://www.instagram.com/reel/DaWgiTuuj15/?igsh=MnB1ZGpubTEyd2w5",
         tools: [],
       },
+      {
+        id: "4-sites-produtos-gratis",
+        title: "4 SITES QUE TE DÃO PRODUTOS DE GRAÇA PARA TESTAR",
+        href: "",
+        tools: [
+          {
+            name: "Home Tester Club",
+            description:
+              "Receba produtos em casa para testar e dar sua opinião.",
+            href: "https://www.hometesterclub.com/br/pt",
+            accent: "#22C55E",
+          },
+          {
+            name: "The Insiders",
+            description:
+              "Comunidade que envia amostras grátis em troca de reviews.",
+            href: "https://www.theinsidersnet.com/pt-br",
+            accent: "#F59E0B",
+          },
+          {
+            name: "Influenster",
+            description:
+              "Ganhe VoxBoxes com produtos para experimentar e avaliar.",
+            href: "https://www.influenster.com/",
+            accent: "#EC4899",
+          },
+          {
+            name: "Eu Quero Nestlé",
+            description:
+              "Programa oficial da Nestlé com amostras, cupons e ofertas.",
+            href: "https://www.euqueronestle.com.br/",
+            accent: "#EF4444",
+          },
+        ],
+      },
     ],
   },
 ];
