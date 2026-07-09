@@ -286,6 +286,48 @@ export const CATEGORIES = [
           },
         ],
       },
+      {
+        id: "5-sites-parecem-ilegais-2",
+        title: "5 SITES QUE PARECEM ILEGAIS, MAS NÃO SÃO",
+        href: "",
+        tools: [
+          {
+            name: "JustDeleteMe",
+            description:
+              "Guia direto para deletar sua conta em qualquer serviço online.",
+            href: "https://justdeleteme.xyz/",
+            accent: "#EF4444",
+          },
+          {
+            name: "VirusTotal",
+            description:
+              "Analise arquivos e URLs suspeitos em 70+ antivírus ao mesmo tempo.",
+            href: "https://www.virustotal.com/gui/home/upload",
+            accent: "#06B6D4",
+          },
+          {
+            name: "Kiwix",
+            description:
+              "Baixe a Wikipédia inteira e outros conteúdos para acessar off-line.",
+            href: "https://kiwix.org/en/",
+            accent: "#22C55E",
+          },
+          {
+            name: "Privnote",
+            description:
+              "Envie mensagens que se autodestroem depois de lidas.",
+            href: "https://privnote.com/",
+            accent: "#F59E0B",
+          },
+          {
+            name: "ToS;DR",
+            description:
+              "Termos de uso resumidos e classificados dos serviços que você usa.",
+            href: "https://tosdr.org/en",
+            accent: "#7C5CFF",
+          },
+        ],
+      },
     ],
   },
   {
