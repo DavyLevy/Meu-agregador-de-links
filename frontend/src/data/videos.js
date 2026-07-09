@@ -288,7 +288,7 @@ export const CATEGORIES = [
       },
       {
         id: "5-sites-parecem-ilegais-2",
-        title: "5 SITES QUE PARECEM ILEGAIS, MAS NÃO SÃO",
+        title: "5 SITES QUE PARECEM ILEGAIS, MAS NÃO SÃO – PARTE 2",
         href: "",
         tools: [
           {
