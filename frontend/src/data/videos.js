@@ -377,6 +377,34 @@ export const CATEGORIES = [
           },
         ],
       },
+      {
+        id: "3-sites-produtos-gratis",
+        title: "3 SITES QUE TE DÃO PRODUTOS DE GRAÇA – PARTE 2",
+        href: "",
+        tools: [
+          {
+            name: "Big Tester",
+            description:
+              "Cadastre-se, faça missões e ganhe produtos de graça pra testar.",
+            href: "https://www.bigtester.com.br/",
+            accent: "#22C55E",
+          },
+          {
+            name: "Toluna",
+            description:
+              "Responda pesquisas e receba pontos, brindes e cupons de desconto.",
+            href: "https://www.toluna.com/group/guest",
+            accent: "#7C5CFF",
+          },
+          {
+            name: "Mimoo",
+            description:
+              "Recebe mimos e amostras grátis de marcas parceiras direto em casa.",
+            href: "https://mimoo.dev/",
+            accent: "#EC4899",
+          },
+        ],
+      },
     ],
   },
 ];
