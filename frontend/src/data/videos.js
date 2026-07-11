@@ -96,6 +96,19 @@ export const CATEGORIES = [
         href: "https://www.instagram.com/reel/DaTpSV8uT2j/?igsh=ZXhpZHZiOGx0Y3hj",
         tools: [],
       },
+      {
+        id: "amante-conversa-trancada",
+        title:
+          "COMO DESCOBRIR SE O(A) AMANTE ESTÁ EM UMA CONVERSA TRANCADA NO WHATSAPP",
+        href: "",
+        pdf: {
+          label: "Baixar o passo a passo (PDF)",
+          description:
+            "Guia completo em PDF para descobrir conversas trancadas no WhatsApp.",
+          href: "https://drive.google.com/file/d/1hbY1PfGEnohp-gvxngCvQa8oljCtXZgY/view?usp=drivesdk",
+        },
+        tools: [],
+      },
     ],
   },
   {
