@@ -129,6 +129,19 @@ export const CATEGORIES = [
         href: "https://www.instagram.com/reel/DaQ5cwTqkuv/?igsh=MTNia3dzYnhhMzBvcQ==",
         tools: [],
       },
+      {
+        id: "modo-manutencao",
+        title:
+          "COLOQUE SEU CELULAR EM MODO MANUTENÇÃO PRA NINGUÉM VER SUAS FOTOS",
+        href: "",
+        pdf: {
+          label: "Baixar o passo a passo (PDF)",
+          description:
+            "Guia completo em PDF para ativar o modo manutenção e proteger suas fotos.",
+          href: "https://docs.google.com/document/d/1hhNBqiVxvOcGj66za3OLuweY22LCQn43quYd9ogOPYg/edit?usp=sharing",
+        },
+        tools: [],
+      },
     ],
   },
   {
