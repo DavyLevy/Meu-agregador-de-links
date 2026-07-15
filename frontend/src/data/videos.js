@@ -232,6 +232,20 @@ export const CATEGORIES = [
             href: "https://www.youtube.com/@mentebinaria",
             accent: "#7C5CFF",
           },
+          {
+            name: "Filipe Deschamps",
+            description:
+              "Programação e tecnologia explicadas de um jeito simples e divertido.",
+            href: "https://www.youtube.com/@FilipeDeschamps",
+            accent: "#F59E0B",
+          },
+          {
+            name: "UNIVESP",
+            description:
+              "Aulas completas de universidade pública, de graça no YouTube.",
+            href: "https://www.youtube.com/@UNIVESPTV",
+            accent: "#06B6D4",
+          },
         ],
       },
     ],
