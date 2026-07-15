@@ -205,6 +205,35 @@ export const CATEGORIES = [
           },
         ],
       },
+      {
+        id: "5-canais-gratis-2",
+        title:
+          "5 CANAIS QUE EU PAGARIA CARO PRA TER ACESSO, MAS SÃO 100% GRÁTIS – PARTE 2",
+        href: "",
+        tools: [
+          {
+            name: "Gabriel Pato",
+            description:
+              "Hacking ético e segurança da informação na prática.",
+            href: "https://www.youtube.com/@GabrielPato",
+            accent: "#EF4444",
+          },
+          {
+            name: "Curso em Vídeo",
+            description:
+              "Cursos completos de programação com o professor Gustavo Guanabara.",
+            href: "https://www.youtube.com/@cursoemvideo",
+            accent: "#22C55E",
+          },
+          {
+            name: "Mente Binária",
+            description:
+              "Engenharia reversa, análise de malware e segurança avançada.",
+            href: "https://www.youtube.com/@mentebinaria",
+            accent: "#7C5CFF",
+          },
+        ],
+      },
     ],
   },
   {
