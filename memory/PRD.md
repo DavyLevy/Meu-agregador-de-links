@@ -64,9 +64,16 @@ Helpers: `findVideoById`, `findVideoBySlug`, `findVideo`, `getToolGroups`.
 ## Correção crítica de rota (17/07/2026)
 - Cards enxutos: contêm APENAS badge de data, título, botão "Assistir ao Vídeo"
   e botão "Acessar Ferramentas". Removida a lista inline "FERRAMENTAS CITADAS".
-- "Acessar Ferramentas" é redirect (Link) para a página isolada `/ferramentas`.
 - Slug padronizado /DDMMAAAAvX em TODOS os vídeos (incl. grampeado 01072026v1 e
   5-sites-facilitar-vida 17062026v1).
+
+## Ferramentas dinâmicas 1-para-1 (17/07/2026)
+- Removida a página global de ferramentas. Nova arquitetura de rotas dinâmicas:
+  `/ferramentas/:slug` renderiza EXCLUSIVAMENTE as ferramentas/PDF daquele vídeo.
+- Botão "Acessar Ferramentas" do card redireciona para `/ferramentas/${slug}`.
+- `/ferramentas` (sem slug) -> redirect para `/videos`.
+- Ferramentas.jsx resolve via findVideo(slug) e mostra só 1 vídeo (isolamento).
+- Validado pelo testing_agent: 100% (50 asserções), isolamento estrito confirmado.
 
 ## Observações
 - Domínio de produção do usuário: davylevy.netlify.app (deploy via Netlify).
