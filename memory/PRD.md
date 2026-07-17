@@ -56,12 +56,17 @@ Helpers: `findVideoById`, `findVideoBySlug`, `findVideo`, `getToolGroups`.
   Pexels, AlternativeTo) em Truques — "Vídeo em breve", sem data/slug ainda.
 
 ## Backlog / P1
-- Substituir links de Reel "em breve" quando o usuário publicar (card
-  "5 sites que facilitam a vida" e outros que surgirem).
-- Definir data/slug do card "5 sites que facilitam a vida" quando publicar.
+- Substituir link de Reel "em breve" do card "5 sites que facilitam a vida"
+  (17/06/2026 → /17062026v1) quando o usuário publicar.
 - Localizar imagens do Google Drive (foto perfil, globo) para `/public`
   (evitar rate limit).
-- `grampeado` está sem `date`/`slug` (não estava nas listas do usuário).
+
+## Correção crítica de rota (17/07/2026)
+- Cards enxutos: contêm APENAS badge de data, título, botão "Assistir ao Vídeo"
+  e botão "Acessar Ferramentas". Removida a lista inline "FERRAMENTAS CITADAS".
+- "Acessar Ferramentas" é redirect (Link) para a página isolada `/ferramentas`.
+- Slug padronizado /DDMMAAAAvX em TODOS os vídeos (incl. grampeado 01072026v1 e
+  5-sites-facilitar-vida 17062026v1).
 
 ## Observações
 - Domínio de produção do usuário: davylevy.netlify.app (deploy via Netlify).

@@ -147,6 +147,8 @@ export const CATEGORIES = [
       },
       {
         id: "grampeado",
+        slug: "01072026v1",
+        date: "01/07/2026",
         title: "CUIDADO!!! O SEU CELULAR PODE ESTAR SENDO GRAMPEADO 😱🚨",
         href: "https://www.instagram.com/reel/DaQ5cwTqkuv/?igsh=MTNia3dzYnhhMzBvcQ==",
         tools: [],
@@ -458,6 +460,8 @@ export const CATEGORIES = [
       },
       {
         id: "5-sites-facilitar-vida",
+        slug: "17062026v1",
+        date: "17/06/2026",
         title: "5 SITES QUE VÃO FACILITAR A SUA VIDA",
         href: "",
         tools: [
