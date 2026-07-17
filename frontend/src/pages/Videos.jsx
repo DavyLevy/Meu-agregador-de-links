@@ -85,8 +85,8 @@ export default function Videos() {
             MEUS VÍDEOS
           </h1>
           <p className="mt-2 text-[13.5px] text-zinc-600 leading-snug max-w-[340px]">
-            Reels organizados por categoria. Cada card traz o vídeo + as
-            ferramentas citadas nele.
+            Reels organizados por categoria. Toque em "Acessar Ferramentas" para
+            ver os sites citados em cada vídeo.
           </p>
         </header>
 

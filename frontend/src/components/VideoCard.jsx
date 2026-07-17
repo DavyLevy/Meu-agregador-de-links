@@ -2,25 +2,6 @@ import React from "react";
 import { Link } from "react-router-dom";
 import { ArrowRightIcon } from "@/components/icons/SocialIcons";
 
-const DocIcon = ({ size = 18 }) => (
-  <svg
-    width={size}
-    height={size}
-    viewBox="0 0 24 24"
-    fill="none"
-    stroke="currentColor"
-    strokeWidth="2.1"
-    strokeLinecap="round"
-    strokeLinejoin="round"
-    aria-hidden="true"
-  >
-    <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z" />
-    <path d="M14 2v6h6" />
-    <path d="M12 18v-6" />
-    <path d="m9 15 3 3 3-3" />
-  </svg>
-);
-
 const CalendarIcon = ({ size = 13 }) => (
   <svg
     width={size}
@@ -54,37 +35,10 @@ const WrenchIcon = ({ size = 15 }) => (
   </svg>
 );
 
-export const ToolPill = ({ tool }) => (
-  <a
-    href={tool.href}
-    target="_blank"
-    rel="noopener noreferrer"
-    data-testid={`tool-${tool.name.toLowerCase().replace(/\s+/g, "-").replace(/\./g, "")}`}
-    className="card-press flex items-center gap-3 rounded-2xl bg-white/[0.04] hover:bg-white/[0.07] ring-1 ring-white/10 px-3.5 py-3 no-underline text-white"
-  >
-    <span
-      className="shrink-0 w-2.5 h-2.5 rounded-full"
-      style={{ backgroundColor: tool.accent }}
-      aria-hidden="true"
-    />
-    <span className="flex-1 min-w-0">
-      <span className="block text-[13.5px] font-semibold leading-tight">
-        {tool.name}
-      </span>
-      {tool.description && (
-        <span className="block text-[11.5px] text-zinc-400 leading-snug mt-0.5">
-          {tool.description}
-        </span>
-      )}
-    </span>
-    <ArrowRightIcon size={13} className="shrink-0 text-zinc-400" />
-  </a>
-);
-
 export const VideoCard = ({ video, categoryEmoji }) => {
   const hasVideo = Boolean(video.href);
-  const hasTools = video.tools && video.tools.length > 0;
-  const hasResources = hasTools || Boolean(video.pdf);
+  const hasResources =
+    (video.tools && video.tools.length > 0) || Boolean(video.pdf);
   return (
     <article
       data-testid={`video-${video.id}`}
@@ -109,7 +63,7 @@ export const VideoCard = ({ video, categoryEmoji }) => {
         </h3>
       </div>
 
-      <div className="mt-4">
+      <div className="mt-4 flex flex-col gap-2.5">
         {hasVideo ? (
           <a
             href={video.href}
@@ -133,10 +87,8 @@ export const VideoCard = ({ video, categoryEmoji }) => {
             Vídeo em breve
           </button>
         )}
-      </div>
 
-      {hasResources && (
-        <div className="mt-3">
+        {hasResources && (
           <Link
             to={`/ferramentas#${video.id}`}
             data-testid={`access-tools-${video.id}`}
@@ -146,70 +98,6 @@ export const VideoCard = ({ video, categoryEmoji }) => {
             Acessar Ferramentas
             <ArrowRightIcon size={14} />
           </Link>
-        </div>
-      )}
-
-      <div
-        className="mt-5 pt-4 border-t border-white/10"
-        data-testid={`tools-section-${video.id}`}
-      >
-        {video.pdf ? (
-          <>
-            <div className="flex items-center gap-2 mb-3">
-              <span aria-hidden="true">📄</span>
-              <p className="text-[11.5px] uppercase tracking-[0.14em] text-zinc-400 font-semibold">
-                Material para baixar
-              </p>
-            </div>
-            <a
-              href={video.pdf.href}
-              target="_blank"
-              rel="noopener noreferrer"
-              data-testid={`pdf-${video.id}`}
-              className="card-press flex items-center gap-3 rounded-2xl bg-white/[0.04] hover:bg-white/[0.07] ring-1 ring-white/10 px-3.5 py-3 no-underline text-white"
-            >
-              <span
-                className="shrink-0 inline-flex items-center justify-center w-9 h-9 rounded-xl text-[#FF7A1A]"
-                style={{ backgroundColor: "rgba(255,122,26,0.12)" }}
-              >
-                <DocIcon size={18} />
-              </span>
-              <span className="flex-1 min-w-0">
-                <span className="block text-[13.5px] font-semibold leading-tight">
-                  {video.pdf.label}
-                </span>
-                {video.pdf.description && (
-                  <span className="block text-[11.5px] text-zinc-400 leading-snug mt-0.5">
-                    {video.pdf.description}
-                  </span>
-                )}
-              </span>
-              <ArrowRightIcon size={13} className="shrink-0 text-zinc-400" />
-            </a>
-          </>
-        ) : (
-          <>
-            <div className="flex items-center gap-2 mb-3">
-              <span aria-hidden="true">🛠️</span>
-              <p className="text-[11.5px] uppercase tracking-[0.14em] text-zinc-400 font-semibold">
-                Ferramentas Citadas
-              </p>
-            </div>
-            {hasTools ? (
-              <div className="flex flex-col gap-2">
-                {video.tools.map((t) => (
-                  <ToolPill key={t.name} tool={t} />
-                ))}
-              </div>
-            ) : (
-              <div className="rounded-2xl bg-white/[0.03] ring-1 ring-dashed ring-white/10 px-4 py-3">
-                <p className="text-[12px] text-zinc-400 leading-snug">
-                  Este tutorial usa apenas ferramentas nativas do seu celular —
-                  nenhum app extra é necessário.
-                </p>
-              </div>
-            )}
-          </>
         )}
       </div>
     </article>

@@ -113,8 +113,8 @@ export default function VideoSingle() {
             {video.title}
           </h1>
           <p className="mt-2 text-[13.5px] text-zinc-600 leading-snug max-w-[340px]">
-            Vídeo + todas as ferramentas citadas, num link só pra você
-            compartilhar.
+            Assista ao vídeo e acesse as ferramentas citadas — tudo num link só
+            pra você compartilhar.
           </p>
         </header>
 
