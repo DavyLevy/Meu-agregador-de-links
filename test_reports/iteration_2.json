@@ -1,0 +1,24 @@
+{
+  "summary": "Frontend e2e testing of the new per-video isolated tools pages. All 50 assertions passed at 420px mobile viewport. Verified: (1) videos listing shows lean cards with no inline 'FERRAMENTAS CITADAS' section; (2) cards with tools/pdf show 'Acessar Ferramentas' that navigates to /ferramentas/<slug>; (3) card without tools (google-storage) has NO access-tools button; (4) STRICT isolation confirmed on /ferramentas/07072026v1 (exactly 5 tools: NetMovies, freeCodeCamp, Diolinux, Guia Anônima, Asimov Academy; no Photopea, PimEyes, ToolFK, etc.); (5) /ferramentas/05072026v1 shows exactly the 6 expected tools and no cross-contamination; (6) /ferramentas/11072026v1 shows ONLY ferramenta-pdf and no other tools; (7) all tool buttons open in new tab (target=_blank); (8) slug route /07072026v1 opens VideoSingle with correct title and share link containing the slug; (9) legacy /v/policia still works; (10) /ferramentas without slug redirects to /videos; (11) unknown slug shows tools-not-found.",
+  "backend_issues": {"critical": [], "minor": []},
+  "frontend_issues": {
+    "ui_bugs": [],
+    "integration_issues": [],
+    "design_issues": []
+  },
+  "test_report_links": [],
+  "action_items": [],
+  "critical_code_review_comments": [
+    "Ferramentas.jsx uses tool.name inside data-testid via lowercase+replace whitespace and strips dots — collisions could occur if two videos happened to share the same tool name (e.g. TinyWow appears in both 5-sites-parecem-ilegais and 5-sites-facilitar-vida), but since each page is isolated by slug this is not an issue in practice.",
+    "Videos.jsx catch-all route /:slug for VideoSingle correctly comes AFTER /apps, /videos, /ferramentas etc. Note: any future top-level route name that matches an unrelated word could conflict — keep new top-level routes above the catch-all.",
+    "'Acessar Ferramentas' is only rendered when hasResources; visually consistent. No regressions found."
+  ],
+  "updated_files": [],
+  "success_rate": {"backend": "n/a", "frontend": "100%"},
+  "test_credentials": "none required",
+  "seed_data_creation": "none",
+  "retest_needed": false,
+  "main_agent_can_self_test": true,
+  "context_for_next_testing_agent": "Static React site, no backend. Base URL: REACT_APP_BACKEND_URL from /app/frontend/.env. Key routes tested: /videos (listing with tabs investigacao/seguranca/entretenimento/truques/renda), /ferramentas/<slug> (per-video isolated tools), /:slug and /v/:id (single video), /ferramentas (redirects to /videos). data-testids used: videos-page, tab-<catid>, video-<id>, video-date-<id>, watch-<id>, access-tools-<id>, tools-page, tools-page-title, tools-list, tools-watch-video, ferramenta-<toolname-lowercased-dashed>, ferramenta-pdf, tools-not-found, video-single-page, share-block, copy-share-link. Isolation verified across 3 tools pages.",
+  "rca of the issue": "No issues. The bug reported (global /ferramentas mixing all tools) has been correctly fixed: /ferramentas now redirects to /videos, and per-video tools live at /ferramentas/:slug. VideoCard.jsx builds the link as `/ferramentas/${video.slug || video.id}` and Ferramentas.jsx uses findVideo(slug) to resolve exactly one video, rendering only that video's tools + pdf."
+}

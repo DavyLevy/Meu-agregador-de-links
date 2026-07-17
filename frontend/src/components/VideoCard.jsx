@@ -90,7 +90,7 @@ export const VideoCard = ({ video, categoryEmoji }) => {
 
         {hasResources && (
           <Link
-            to={`/ferramentas#${video.id}`}
+            to={`/ferramentas/${video.slug || video.id}`}
             data-testid={`access-tools-${video.id}`}
             className="cta-pill inline-flex w-full items-center justify-center gap-2 rounded-full bg-white text-black text-[13px] font-semibold px-4 py-3 leading-none no-underline hover:bg-zinc-100"
           >

@@ -1,5 +1,5 @@
 import "@/App.css";
-import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
 import LinkInBio from "@/pages/LinkInBio";
 import Videos from "@/pages/Videos";
 import VideoSingle from "@/pages/VideoSingle";
@@ -15,7 +15,8 @@ function App() {
         <Routes>
           <Route path="/" element={<LinkInBio />} />
           <Route path="/videos" element={<Videos />} />
-          <Route path="/ferramentas" element={<Ferramentas />} />
+          <Route path="/ferramentas" element={<Navigate to="/videos" replace />} />
+          <Route path="/ferramentas/:slug" element={<Ferramentas />} />
           <Route path="/v/:id" element={<VideoSingle />} />
           <Route path="/apps" element={<Apps />} />
           <Route path="/apps/android" element={<AppsAndroid />} />

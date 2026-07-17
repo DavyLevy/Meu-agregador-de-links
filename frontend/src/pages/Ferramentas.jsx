@@ -1,7 +1,7 @@
-import React, { useEffect } from "react";
-import { Link, useLocation } from "react-router-dom";
+import React from "react";
+import { Link, useParams } from "react-router-dom";
 import { ChevronLeftIcon, ArrowRightIcon } from "@/components/icons/SocialIcons";
-import { getToolGroups } from "@/data/videos";
+import { findVideo } from "@/data/videos";
 
 const DocIcon = ({ size = 18 }) => (
   <svg
@@ -85,82 +85,95 @@ const PdfButton = ({ pdf }) => (
 );
 
 export default function Ferramentas() {
-  const location = useLocation();
-  const groups = getToolGroups();
+  const { slug } = useParams();
+  const result = findVideo(slug);
 
-  useEffect(() => {
-    const hash = location.hash ? location.hash.slice(1) : "";
-    if (!hash) return;
-    const el = document.getElementById(hash);
-    if (el) {
-      const t = setTimeout(
-        () => el.scrollIntoView({ behavior: "smooth", block: "start" }),
-        120,
-      );
-      return () => clearTimeout(t);
-    }
-  }, [location.hash]);
+  if (!result) {
+    return (
+      <div className="page-shell">
+        <main className="page-inner" data-testid="tools-not-found">
+          <Link
+            to="/videos"
+            className="inline-flex items-center gap-1 text-[13px] font-medium text-zinc-700 hover:text-black no-underline"
+          >
+            <ChevronLeftIcon size={18} />
+            Voltar aos vídeos
+          </Link>
+          <div className="mt-10 text-center">
+            <h1 className="text-2xl font-bold text-black">
+              Ferramentas não encontradas
+            </h1>
+            <p className="mt-2 text-[14px] text-zinc-600">
+              O link que você acessou não existe mais ou foi movido.
+            </p>
+          </div>
+        </main>
+      </div>
+    );
+  }
+
+  const { video, category } = result;
+  const hasTools = video.tools && video.tools.length > 0;
 
   return (
     <div className="page-shell">
-      <main className="page-inner" data-testid="ferramentas-page">
+      <main className="page-inner" data-testid="tools-page">
         <Link
-          to="/videos"
-          data-testid="back-to-videos"
+          to={`/${video.slug || `v/${video.id}`}`}
+          data-testid="back-to-video"
           className="inline-flex items-center gap-1 text-[13px] font-medium text-zinc-700 hover:text-black no-underline"
         >
           <ChevronLeftIcon size={18} />
-          Voltar aos vídeos
+          Voltar ao vídeo
         </Link>
 
         <header className="mt-5 fade-up">
           <p className="text-[12px] uppercase tracking-[0.18em] text-zinc-500 font-semibold">
-            Davy Levy · Pasta de Ferramentas
+            Davy Levy · {category.shortLabel}
+            {video.date ? ` · ${video.date}` : ""}
           </p>
-          <h1 className="mt-2 text-[26px] sm:text-[30px] font-extrabold tracking-tight text-black leading-tight uppercase">
-            FERRAMENTAS
+          <h1
+            data-testid="tools-page-title"
+            className="mt-2 text-[22px] sm:text-[26px] font-extrabold tracking-tight text-black leading-tight uppercase"
+          >
+            {video.title}
           </h1>
           <p className="mt-2 text-[13.5px] text-zinc-600 leading-snug max-w-[340px]">
-            Todos os sites e ferramentas citados nos vídeos, reunidos num lugar
-            só. É só tocar para abrir.
+            Todas as ferramentas citadas neste vídeo, reunidas aqui. É só tocar
+            para abrir.
           </p>
         </header>
 
-        <div className="mt-8 flex flex-col gap-10">
-          {groups.map((cat) => (
-            <section key={cat.id} data-testid={`ferramentas-cat-${cat.id}`}>
-              <div className="flex items-center gap-2 mb-4">
-                <span className="text-xl" aria-hidden="true">
-                  {cat.emoji}
-                </span>
-                <h2 className="text-[13.5px] font-bold text-black uppercase tracking-wider">
-                  {cat.label}
-                </h2>
-              </div>
+        {video.href && (
+          <a
+            href={video.href}
+            target="_blank"
+            rel="noopener noreferrer"
+            data-testid="tools-watch-video"
+            className="cta-pill mt-5 inline-flex w-full items-center justify-center gap-2 rounded-full bg-[#FF7A1A] hover:bg-[#FF8A33] text-white text-[13px] font-semibold px-4 py-3 leading-none no-underline"
+          >
+            <span aria-hidden="true">🎬</span>
+            Assistir ao Vídeo
+            <ArrowRightIcon size={14} />
+          </a>
+        )}
 
-              <div className="flex flex-col gap-7">
-                {cat.videos.map((v) => (
-                  <div
-                    key={v.id}
-                    id={v.id}
-                    className="scroll-mt-6"
-                    data-testid={`ferramentas-group-${v.id}`}
-                  >
-                    <p className="text-[12.5px] font-bold text-zinc-800 leading-snug mb-3">
-                      {v.title}
-                    </p>
-                    <div className="flex flex-col gap-2.5">
-                      {v.pdf && <PdfButton pdf={v.pdf} />}
-                      {v.tools.map((t) => (
-                        <ToolButton key={t.name} tool={t} />
-                      ))}
-                    </div>
-                  </div>
-                ))}
-              </div>
-            </section>
-          ))}
-        </div>
+        <section
+          className="mt-6 flex flex-col gap-2.5"
+          data-testid="tools-list"
+        >
+          {video.pdf && <PdfButton pdf={video.pdf} />}
+          {hasTools &&
+            video.tools.map((t) => <ToolButton key={t.name} tool={t} />)}
+          {!hasTools && !video.pdf && (
+            <div className="rounded-2xl bg-white ring-1 ring-black/5 px-4 py-5 text-center">
+              <p className="text-[13px] text-zinc-600 leading-snug">
+                Este tutorial usa apenas ferramentas nativas do seu celular —
+                nenhum app extra é necessário.
+              </p>
+            </div>
+          )}
+        </section>
 
         <footer className="mt-12 flex flex-col items-center gap-1">
           <p className="text-[11px] text-zinc-400">
