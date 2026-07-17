@@ -1,5 +1,11 @@
 /* Videos data — categorised list. Also exports helpers.
-   Add tools inline to any video. Set href to "" for videos with pending URL. */
+   Each video has:
+     - id: internal id (legacy /v/:id links)
+     - slug: padronised Link-da-Bio code /DDMMAAAAvX
+     - date: display date DD/MM/AAAA
+     - href: Instagram Reel link ("" => "Vídeo em breve")
+     - tools: array of cited tools/sites
+     - pdf (optional): downloadable step-by-step material */
 
 export const CATEGORIES = [
   {
@@ -10,6 +16,8 @@ export const CATEGORIES = [
     videos: [
       {
         id: "loc-tempo-real",
+        slug: "21062026v1",
+        date: "21/06/2026",
         title:
           "COMO OBTER A LOCALIZAÇÃO EM TEMPO REAL DE QUALQUER PESSOA DE FORMA AUTOMÁTICA",
         href: "https://www.instagram.com/reel/DZ3MVXZxnHE/?igsh=MWpwdDNndW03MDVpdw==",
@@ -17,6 +25,8 @@ export const CATEGORIES = [
       },
       {
         id: "tres-ferramentas",
+        slug: "23062026v1",
+        date: "23/06/2026",
         title:
           "TRÊS FERRAMENTAS PRA VOCÊ APRENDER A SE PROTEGER E INVESTIGAR",
         href: "https://www.instagram.com/reel/DZ8bthLK6wA/?igsh=bnpyMGt1b3pleGwy",
@@ -46,8 +56,10 @@ export const CATEGORIES = [
       },
       {
         id: "policia",
+        slug: "04072026v1",
+        date: "04/07/2026",
         title: "5 SITES QUE A POLÍCIA USA PARA INVESTIGAÇÕES",
-        href: "",
+        href: "https://www.instagram.com/reel/DaYzzbhqdBd/?igsh=MXh1and3aGk0aTIzeQ==",
         tools: [
           {
             name: "PimEyes",
@@ -79,6 +91,8 @@ export const CATEGORIES = [
       },
       {
         id: "amante",
+        slug: "28062026v1",
+        date: "28/06/2026",
         title:
           "QUER VER AS FOTOS QUE SEU MARIDO OU SUA ESPOSA RECEBEU DO(A) AMANTE E APAGOU?",
         href: "https://www.instagram.com/reel/DaJJz_tq6l0/?igsh=MnJyNzJ1ZzlraWZk",
@@ -86,21 +100,27 @@ export const CATEGORIES = [
       },
       {
         id: "golpe-pix",
+        slug: "30062026v1",
+        date: "30/06/2026",
         title: "CAIU NO GOLPE DO PIX? DESCUBRA TUDO SOBRE QUEM RECEBEU",
         href: "https://www.instagram.com/reel/DaOgNtKqdAl/?igsh=MXM0eXFzazV5ZGtmcw==",
         tools: [],
       },
       {
         id: "insta-ex",
+        slug: "02062026v1",
+        date: "02/06/2026",
         title: "COMO VER O INSTAGRAM DO EX SEM ELE SABER",
         href: "https://www.instagram.com/reel/DaTpSV8uT2j/?igsh=ZXhpZHZiOGx0Y3hj",
         tools: [],
       },
       {
         id: "amante-conversa-trancada",
+        slug: "11072026v1",
+        date: "11/07/2026",
         title:
           "COMO DESCOBRIR SE O(A) AMANTE ESTÁ EM UMA CONVERSA TRANCADA NO WHATSAPP",
-        href: "",
+        href: "https://www.instagram.com/reel/DaquVN0KaH4/?igsh=MTdrejg4eHR6ZmpkNg==",
         pdf: {
           label: "Baixar o passo a passo (PDF)",
           description:
@@ -119,7 +139,9 @@ export const CATEGORIES = [
     videos: [
       {
         id: "mic-google",
-        title: "COMO DESATIVAR O MICROFONE ESPIÃO DO GOOGLE",
+        slug: "26062026v1",
+        date: "26/06/2026",
+        title: "ATENÇÃO: O GOOGLE GRAVA TUDO O QUE VOCÊ FALA",
         href: "https://www.instagram.com/reel/DaBeJW-KLJk/?igsh=cWVjeHJlajFlYWE=",
         tools: [],
       },
@@ -130,10 +152,20 @@ export const CATEGORIES = [
         tools: [],
       },
       {
+        id: "blinde-celular-furtos",
+        slug: "14072026v1",
+        date: "14/07/2026",
+        title: "BLINDE SEU CELULAR CONTRA FURTOS – PARTE 1",
+        href: "https://www.instagram.com/reel/DaycBObKpJX/?igsh=MWNtODgwaWVvbGJnNQ==",
+        tools: [],
+      },
+      {
         id: "modo-manutencao",
+        slug: "13062026v1",
+        date: "13/06/2026",
         title:
           "COLOQUE SEU CELULAR EM MODO MANUTENÇÃO PRA NINGUÉM VER SUAS FOTOS",
-        href: "",
+        href: "https://www.instagram.com/reel/DavwNoHKP6Y/?igsh=ZWtuNXhyMm5ob3l1",
         pdf: {
           label: "Baixar o passo a passo (PDF)",
           description:
@@ -152,21 +184,27 @@ export const CATEGORIES = [
     videos: [
       {
         id: "tv-aberta",
+        slug: "22062026v1",
+        date: "22/06/2026",
         title: "COMO VER TV ABERTA DE QUALQUER PAÍS, E DE GRAÇA",
         href: "https://www.instagram.com/reel/DZ53Todu7NJ/?igsh=ZDZqbmV0eDJsbWt2",
         tools: [],
       },
       {
         id: "nao-pague-filmes",
+        slug: "12072026v1",
+        date: "12/07/2026",
         title: "ATENÇÃO: NÃO PAGUE PARA ASSISTIR FILMES",
         href: "https://www.instagram.com/reel/DaEDZWmKsoA/?igsh=MTNzaXI2OGt5amJ1aw==",
         tools: [],
       },
       {
         id: "5-canais-gratis",
+        slug: "07072026v1",
+        date: "07/07/2026",
         title:
           "5 CANAIS QUE EU PAGARIA CARO PARA TER ACESSO, MAS SÃO 100% GRÁTIS",
-        href: "",
+        href: "https://www.instagram.com/reel/DagXqxXK2gj/?igsh=MWxiYTN0c2tkYzJtbg==",
         tools: [
           {
             name: "NetMovies",
@@ -207,9 +245,11 @@ export const CATEGORIES = [
       },
       {
         id: "5-canais-gratis-2",
+        slug: "15072026v1",
+        date: "15/07/2026",
         title:
           "5 CANAIS QUE EU PAGARIA CARO PRA TER ACESSO, MAS SÃO 100% GRÁTIS – PARTE 2",
-        href: "",
+        href: "https://www.instagram.com/reel/Da1Be8QK0PP/?igsh=NWw5bXk2bTh4d2F4",
         tools: [
           {
             name: "Gabriel Pato",
@@ -258,20 +298,26 @@ export const CATEGORIES = [
     videos: [
       {
         id: "google-storage",
+        slug: "24062026v1",
+        date: "24/06/2026",
         title: "COMO LIBERAR ARMAZENAMENTO NA CONTA DO GOOGLE",
         href: "https://www.instagram.com/reel/DZ-NE_PuGwt/?igsh=MWQ2bXNiY2t5ZmwyZw==",
         tools: [],
       },
       {
         id: "wpp-offline",
+        slug: "27062026v1",
+        date: "27/06/2026",
         title: "FIQUE OFF-LINE NO WHATSAPP SEM DESLIGAR A SUA INTERNET",
         href: "https://www.instagram.com/reel/DaG0cq7ulcM/?igsh=MXJyeGxjNWF4bjc0dg==",
         tools: [],
       },
       {
         id: "6-sites-empresas",
+        slug: "05072026v1",
+        date: "05/07/2026",
         title: "6 SITES GRATUITOS QUE AS EMPRESAS NÃO QUEREM QUE VOCÊ SAIBA",
-        href: "",
+        href: "https://www.instagram.com/reel/DabYaF1qsQi/?igsh=cGh1N3MyOXRlejE3",
         tools: [
           {
             name: "ToolFK",
@@ -315,8 +361,10 @@ export const CATEGORIES = [
       },
       {
         id: "5-sites-parecem-ilegais",
+        slug: "06072026v1",
+        date: "06/07/2026",
         title: "5 SITES QUE PARECEM SER ILEGAIS MAS NÃO SÃO",
-        href: "",
+        href: "https://www.instagram.com/reel/Dad8ht-q6k8/?igsh=ZWZ4eWhqYW9tcWU3",
         tools: [
           {
             name: "10 Minute Mail",
@@ -357,8 +405,10 @@ export const CATEGORIES = [
       },
       {
         id: "5-sites-parecem-ilegais-2",
+        slug: "09072026v1",
+        date: "09/07/2026",
         title: "5 SITES QUE PARECEM ILEGAIS, MAS NÃO SÃO – PARTE 2",
-        href: "",
+        href: "https://www.instagram.com/reel/DaleuYNqAsB/?igsh=cHEyNDZ3ZzFhZGd5",
         tools: [
           {
             name: "JustDeleteMe",
@@ -397,6 +447,15 @@ export const CATEGORIES = [
           },
         ],
       },
+      {
+        id: "gerar-imagens-ia",
+        slug: "16072026v1",
+        date: "16/07/2026",
+        title:
+          "APRENDA A GERAR IMAGENS DE QUALIDADE COM INTELIGÊNCIA ARTIFICIAL",
+        href: "https://www.instagram.com/reel/Da3ndvTK1ep/?igsh=MTN2Nmh4MjV4cnlvYw==",
+        tools: [],
+      },
     ],
   },
   {
@@ -407,14 +466,18 @@ export const CATEGORIES = [
     videos: [
       {
         id: "4-apps-renda",
+        slug: "03072026v1",
+        date: "03/07/2026",
         title: "4 APLICATIVOS PARA FAZER RENDA EXTRA",
         href: "https://www.instagram.com/reel/DaWgiTuuj15/?igsh=MnB1ZGpubTEyd2w5",
         tools: [],
       },
       {
         id: "4-sites-produtos-gratis",
+        slug: "08072026v1",
+        date: "08/07/2026",
         title: "4 SITES QUE TE DÃO PRODUTOS DE GRAÇA PARA TESTAR",
-        href: "",
+        href: "https://www.instagram.com/reel/Dai7dK6KSRx/?igsh=OHFkeHZja29oMmIz",
         tools: [
           {
             name: "Home Tester Club",
@@ -448,8 +511,10 @@ export const CATEGORIES = [
       },
       {
         id: "3-sites-produtos-gratis",
+        slug: "10072026v1",
+        date: "10/07/2026",
         title: "3 SITES QUE TE DÃO PRODUTOS DE GRAÇA – PARTE 2",
-        href: "",
+        href: "https://www.instagram.com/reel/DaoFOkFKU3Z/?igsh=MTYya3M0cnk1NWNtaw==",
         tools: [
           {
             name: "Big Tester",
@@ -484,4 +549,27 @@ export function findVideoById(id) {
     if (v) return { video: v, category: cat };
   }
   return null;
+}
+
+export function findVideoBySlug(slug) {
+  for (const cat of CATEGORIES) {
+    const v = cat.videos.find((x) => x.slug === slug);
+    if (v) return { video: v, category: cat };
+  }
+  return null;
+}
+
+/* Resolve a video by either padronised slug (/DDMMAAAAvX) or legacy id (/v/:id). */
+export function findVideo(key) {
+  return findVideoBySlug(key) || findVideoById(key);
+}
+
+/* Groups (category → videos that have tools or PDF) used by the Ferramentas page. */
+export function getToolGroups() {
+  return CATEGORIES.map((cat) => ({
+    ...cat,
+    videos: cat.videos.filter(
+      (v) => (v.tools && v.tools.length > 0) || v.pdf,
+    ),
+  })).filter((cat) => cat.videos.length > 0);
 }
