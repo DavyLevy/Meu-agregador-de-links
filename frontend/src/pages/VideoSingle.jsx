@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { Link, useParams } from "react-router-dom";
 import { ChevronLeftIcon } from "@/components/icons/SocialIcons";
 import { VideoCard } from "@/components/VideoCard";
-import { findVideoById } from "@/data/videos";
+import { findVideo } from "@/data/videos";
 
 const CheckIcon = ({ size = 14 }) => (
   <svg
@@ -38,8 +38,9 @@ const CopyIcon = ({ size = 14 }) => (
 );
 
 export default function VideoSingle() {
-  const { id } = useParams();
-  const result = findVideoById(id);
+  const params = useParams();
+  const key = params.slug || params.id;
+  const result = findVideo(key);
   const [copied, setCopied] = useState(false);
 
   if (!result) {
@@ -66,7 +67,9 @@ export default function VideoSingle() {
 
   const { video, category } = result;
   const shareUrl =
-    typeof window !== "undefined" ? window.location.href : "";
+    typeof window !== "undefined"
+      ? `${window.location.origin}/${video.slug || `v/${video.id}`}`
+      : "";
 
   const handleCopy = async () => {
     try {

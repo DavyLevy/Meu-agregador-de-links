@@ -1,44 +1,68 @@
-# PRD — Davy Levy · Link in Bio
+# Davy Levy — Link in Bio (PRD)
 
-## Problem statement (original, abridged)
-Mobile-first "Link in Bio" page for Davy Levy (Estrategista Digital) with:
-- Background #F5F5F7, modern sans-serif (Inter).
-- Centered header: profile photo, name, subtitle, social row (Instagram, Facebook, TikTok, YouTube).
-- Dark rounded (24px) cards with orange pill CTAs and a right-side product/mockup slot.
-- Card 1 → "TV GRÁTIS" → https://famelack.com/tv/br with globe image.
-- Card 2 → "Ferramentas de Investigação" → sub-page with DeHashed, Jimpl, Sync.me.
-- Card 3 → "Meus vídeos" (Instagram icon) → sub-page with 4 Instagram reels.
-- Green pastel (#E6F4EA) "Suporte aos Alunos" card linking to WhatsApp.
-- Footer: "Apenas para parcerias" + mailto:parceriasdavytech@gmail.com.
+## Problema original
+Página "Link in Bio" mobile-first e de alta conversão para o criador Davy Levy.
+Home com foto de perfil, redes sociais e CTAs principais (TV Grátis, Mind7, Apps
+Renda Extra, Meus Vídeos). Seção `/videos` categorizada em abas temáticas, com
+páginas individuais compartilháveis por vídeo (vídeo + ferramentas citadas).
+Idioma do usuário: **Português** (responder sempre em PT).
 
-## Architecture
-- Pure front-end React app (no backend / no Mongo touched).
-- Routing via react-router-dom: `/`, `/ferramentas`, `/videos`.
-- Brand SVG icons handcoded in `/app/frontend/src/components/icons/SocialIcons.jsx`.
-- Inter font loaded via Google Fonts.
-- Tailwind utility classes + small CSS helpers in `index.css`.
+## Arquitetura (frontend estático, sem backend)
+```
+/app/frontend/src/
+├── components/
+│   ├── icons/SocialIcons.jsx
+│   └── VideoCard.jsx        # card do vídeo: badge de data, botão vídeo,
+│                            #   botão "Acessar Ferramentas", tools/PDF
+│   └── ui/                  # shadcn
+├── data/videos.js           # FONTE ÚNICA de dados (CATEGORIES + helpers)
+├── pages/
+│   ├── LinkInBio.jsx        # home /
+│   ├── Videos.jsx           # /videos (abas por categoria)
+│   ├── VideoSingle.jsx      # /:slug  e  /v/:id (página compartilhável)
+│   ├── Ferramentas.jsx      # /ferramentas (todas as ferramentas em botões)
+│   ├── Apps.jsx / AppsAndroid.jsx / AppsIOS.jsx
+└── App.js                   # rotas
+public/_redirects            # SPA fallback p/ Netlify (/* /index.html 200)
+```
 
-## User persona
-Single owner-content creator (Davy Levy) directing Instagram/TikTok traffic to:
-1. Famelack TV affiliate link (primary monetisable click).
-2. Internal Ferramentas + Vídeos discovery pages.
-3. WhatsApp support for existing students.
+## Modelo de dados (videos.js)
+Cada vídeo: `{ id, slug?, date?, title, href, tools:[], pdf? }`
+- `slug`: código padronizado da Link-da-Bio `/DDMMAAAAvX` (v1, v2... por dia).
+- `date`: data de exibição `DD/MM/AAAA` (badge no card).
+- `href`: link do Reel do Instagram; `""` => botão "Vídeo em breve".
+- `tools[]`: `{ name, description, href, accent }`.
+- `pdf`: `{ label, description, href }` (material passo a passo, não é ferramenta).
+Helpers: `findVideoById`, `findVideoBySlug`, `findVideo`, `getToolGroups`.
 
-## Implemented (2026-12)
-- Main page (`/`) with header, social row, 3 dark CTA cards, green Suporte card, footer.
-- Ferramentas sub-page (`/ferramentas`) with 3 external tool cards.
-- Vídeos sub-page (`/videos`) with 4 Instagram reel cards.
-- Mobile-first layout, 480px max width, 24px card radius, orange `#FF7A1A` pill CTAs.
-- Profile + globe images served from Google Drive via `lh3.googleusercontent.com/d/<id>`.
-- 100% pass rate on the frontend e2e test (48 assertions).
+## Rotas
+- `/` home · `/videos` lista · `/ferramentas` pasta de ferramentas
+- `/:slug` (ex: `/26062026v1`) e `/v/:id` (legado) → VideoSingle
+- `/apps`, `/apps/android`, `/apps/ios`
 
-## Backlog / next iterations (P1/P2)
-- P1 — Replace Google Drive image hosting with a CDN or local `/public` upload for resilience.
-- P1 — Replace placeholder `wa.me/?text=...` with the actual WhatsApp number for Suporte.
-- P2 — Click tracking / UTM tagging for Famelack and external tool links.
-- P2 — Light dark-mode toggle.
-- P2 — Lightweight admin to edit cards without redeploying (would require backend).
+## Implementado (17/07/2026)
+- Cards PDF (WhatsApp amante trancada, modo manutenção) com bloco "Material para baixar".
+- Cards de canais (5 canais Parte 2 completa: Gabriel Pato, Curso em Vídeo,
+  Mente Binária, Filipe Deschamps, UNIVESP).
+- **Tarefa 1+2**: `date` e `slug` padronizado em todos os vídeos; Reels
+  integrados nos cards que estavam "em breve"; card do Google renomeado para
+  "ATENÇÃO: O GOOGLE GRAVA TUDO O QUE VOCÊ FALA".
+- **Tarefa 3**: página `/ferramentas` (botões individuais por link, agrupados por
+  vídeo/categoria, com âncora `#id` e scroll suave) + botão "Acessar Ferramentas"
+  em cada card que tem ferramentas/PDF.
+- `VideoSingle` resolve slug OU id legado; link de compartilhar usa o slug padronizado.
+- `public/_redirects` para o Netlify servir as rotas client-side.
+- Novo card "5 SITES QUE VÃO FACILITAR A SUA VIDA" (Photopea, TinyWow, CapCut Web,
+  Pexels, AlternativeTo) em Truques — "Vídeo em breve", sem data/slug ainda.
 
-## Open questions
-- WhatsApp number for Suporte aos Alunos.
-- Whether to host the profile/globe images in `/app/frontend/public/` for offline-safe delivery.
+## Backlog / P1
+- Substituir links de Reel "em breve" quando o usuário publicar (card
+  "5 sites que facilitam a vida" e outros que surgirem).
+- Definir data/slug do card "5 sites que facilitam a vida" quando publicar.
+- Localizar imagens do Google Drive (foto perfil, globo) para `/public`
+  (evitar rate limit).
+- `grampeado` está sem `date`/`slug` (não estava nas listas do usuário).
+
+## Observações
+- Domínio de produção do usuário: davylevy.netlify.app (deploy via Netlify).
+- Preview atual: link-in-bio-7.preview.emergentagent.com (ignorar em prod).

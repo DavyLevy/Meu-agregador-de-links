@@ -456,6 +456,48 @@ export const CATEGORIES = [
         href: "https://www.instagram.com/reel/Da3ndvTK1ep/?igsh=MTN2Nmh4MjV4cnlvYw==",
         tools: [],
       },
+      {
+        id: "5-sites-facilitar-vida",
+        title: "5 SITES QUE VÃO FACILITAR A SUA VIDA",
+        href: "",
+        tools: [
+          {
+            name: "Photopea",
+            description:
+              "Editor de imagens completo (tipo Photoshop) grátis e no navegador.",
+            href: "https://www.photopea.com",
+            accent: "#06B6D4",
+          },
+          {
+            name: "TinyWow",
+            description:
+              "Mais de 200 ferramentas grátis: PDF, imagem, vídeo, IA e mais.",
+            href: "https://tinywow.com",
+            accent: "#22C55E",
+          },
+          {
+            name: "CapCut Web",
+            description:
+              "Edite vídeos direto no navegador, sem instalar nada.",
+            href: "https://www.capcut.com",
+            accent: "#7C5CFF",
+          },
+          {
+            name: "Pexels",
+            description:
+              "Banco de fotos e vídeos gratuitos e livres de direitos autorais.",
+            href: "https://www.pexels.com",
+            accent: "#F59E0B",
+          },
+          {
+            name: "AlternativeTo",
+            description:
+              "Ache o substituto grátis de qualquer software pago.",
+            href: "https://alternativeto.net",
+            accent: "#EF4444",
+          },
+        ],
+      },
     ],
   },
   {
