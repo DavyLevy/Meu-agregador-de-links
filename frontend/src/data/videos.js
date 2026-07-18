@@ -585,6 +585,20 @@ export const CATEGORIES = [
           },
         ],
       },
+      {
+        id: "dinheiro-para-receber",
+        slug: "18072026v1",
+        date: "18/07/2026",
+        title: "VOCÊ TEM DINHEIRO PARA RECEBER AGORA MESMO",
+        href: "https://www.instagram.com/reel/Da6JcaNqGa1/?igsh=cHBiZWFucDk2Nmc2",
+        pdf: {
+          label: "Baixar o passo a passo (PDF)",
+          description:
+            "Guia completo em PDF para consultar e resgatar dinheiro esquecido no seu nome.",
+          href: "https://docs.google.com/document/d/1hLYuCGfK-onWLW4BwqSGCWxfCj-mriqMg21ExfMmeJ4/edit?usp=drivesdk",
+        },
+        tools: [],
+      },
     ],
   },
 ];
