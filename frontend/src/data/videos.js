@@ -463,7 +463,7 @@ export const CATEGORIES = [
         slug: "17062026v1",
         date: "17/06/2026",
         title: "5 SITES QUE VÃO FACILITAR A SUA VIDA",
-        href: "",
+        href: "https://www.instagram.com/reel/Da6JcaNqGa1/?igsh=cHBiZWFucDk2Nmc2",
         tools: [
           {
             name: "Photopea",
@@ -590,7 +590,7 @@ export const CATEGORIES = [
         slug: "18072026v1",
         date: "18/07/2026",
         title: "VOCÊ TEM DINHEIRO PARA RECEBER AGORA MESMO",
-        href: "https://www.instagram.com/reel/Da6JcaNqGa1/?igsh=cHBiZWFucDk2Nmc2",
+        href: "",
         pdf: {
           label: "Baixar o passo a passo (PDF)",
           description:
