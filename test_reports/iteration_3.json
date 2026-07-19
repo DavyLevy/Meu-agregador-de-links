@@ -1,0 +1,47 @@
+{
+  "summary": "Frontend-only regression on Davy Levy Link-in-Bio: verified reel-link swap (17062026v1), new 19/07 card, and per-video tools isolation for slugs 17062026v1, 18072026v1, 19072026v1. BUG FIX 1 and new 19/07 card fully working. Isolated tools pages pass 100%. BUG FIX 2 is NOT applied — /18072026v1 still renders the disabled 'Vídeo em breve' button because /app/frontend/src/data/videos.js still has href='' for id 'dinheiro-para-receber'; expected active <a> pointing to https://www.instagram.com/reel/Da8p_uPK39E/?igsh=dzVjemJ3Z2d0cm80.",
+  "backend_issues": {"critical": [], "minor": []},
+  "frontend_issues": {
+    "ui_bugs": [
+      {
+        "component": "VideoCard (id=dinheiro-para-receber, slug=18072026v1)",
+        "issue": "Watch button is still disabled '<button> Vídeo em breve' (no href). Expected active <a> with href='https://www.instagram.com/reel/Da8p_uPK39E/?igsh=dzVjemJ3Z2d0cm80'. Data file /app/frontend/src/data/videos.js line ~593 still has href: \"\".",
+        "selector": "[data-testid=\"watch-dinheiro-para-receber\"]",
+        "priority": "HIGH"
+      }
+    ],
+    "integration_issues": [],
+    "design_issues": []
+  },
+  "test_report_links": ["/app/test_reports/iteration_3.json"],
+  "action_items": [
+    "In /app/frontend/src/data/videos.js, update the 'dinheiro-para-receber' entry (slug 18072026v1) so that href = 'https://www.instagram.com/reel/Da8p_uPK39E/?igsh=dzVjemJ3Z2d0cm80'. This will convert the disabled button to an active 'Assistir ao Vídeo' <a> on /18072026v1 and on the /videos listing (Renda Extra tab). No other files should need changes; VideoCard.jsx and Ferramentas.jsx are already correct."
+  ],
+  "critical_code_review_comments": [
+    "videos.js is a single 665-line data file — acceptable given it's static content, but consider splitting per-category into separate files if it grows beyond ~1000 lines.",
+    "In Ferramentas.jsx, `data-testid` for tools uses tool name; names containing spaces/parentheses like 'Pinion (iOS)' produce test-ids like 'ferramenta-pinion-(ios)'. Works in Playwright but is fragile; consider slugifying (strip parentheses) to get 'ferramenta-pinion-ios'.",
+    "Ferramentas.jsx uses `video.tools.map((t) => <ToolButton key={t.name} ...>)` — key is unique inside a single video but be careful if two tools ever share a name across different videos (not an issue today)."
+  ],
+  "updated_files": [],
+  "success_rate": {"backend": "N/A (skipped per request)", "frontend": "80% (4/5 checks pass)"},
+  "test_credentials": "N/A — static frontend",
+  "seed_data_creation": "None",
+  "retest_needed": true,
+  "should_main_agent_self_test": true,
+  "context_for_next_testing_agent": "Only /18072026v1 remains failing. After main agent updates the 'dinheiro-para-receber' href in /app/frontend/src/data/videos.js, retest by visiting https://link-in-bio-7.preview.emergentagent.com/18072026v1 and asserting [data-testid=\"watch-dinheiro-para-receber\"] is an <a> with the Da8p_uPK39E URL. Everything else (17062026v1 active reel Da6JcaNqGa1, /19072026v1 disabled + access-tools link, and all three /ferramentas/ pages isolated correctly with expected button counts 5/1/3) already passes and does not need re-testing unless data.js changes affect them.",
+  "rca_of_the_issue": {
+    "bug": "18072026v1 'Assistir ao Vídeo' still disabled instead of linking to the corrected Instagram reel.",
+    "root_cause": "The data update for the 18/07 card was not applied. /app/frontend/src/data/videos.js still has `href: \"\"` for the object with id 'dinheiro-para-receber' (Renda Extra category, slug 18072026v1). VideoCard.jsx correctly renders a disabled 'Vídeo em breve' <button> whenever `video.href` is falsy — so the rendered UI is a symptom of missing data, not a component bug.",
+    "reproduction": "Load https://link-in-bio-7.preview.emergentagent.com/18072026v1 → the button reads 'Vídeo em breve' and is a <button> without href. Same on /videos → Renda Extra tab, card 'VOCÊ TEM DINHEIRO PARA RECEBER AGORA MESMO'.",
+    "mitigation": "Set href of the 'dinheiro-para-receber' object in /app/frontend/src/data/videos.js to 'https://www.instagram.com/reel/Da8p_uPK39E/?igsh=dzVjemJ3Z2d0cm80'. No further code changes needed."
+  },
+  "verified_pass_matrix": {
+    "/17062026v1 watch-5-sites-facilitar-vida": "PASS — <a> href=https://www.instagram.com/reel/Da6JcaNqGa1/?igsh=cHBiZWFucDk2Nmc2",
+    "/18072026v1 watch-dinheiro-para-receber": "FAIL — <button> disabled 'Vídeo em breve' (data.href still empty)",
+    "/19072026v1 watch-ganhe-dinheiro-celular": "PASS — <button> disabled 'Vídeo em breve' + date badge 19/07/2026 + access-tools-ganhe-dinheiro-celular → /ferramentas/19072026v1",
+    "/ferramentas/19072026v1": "PASS — exactly 3 buttons: ferramenta-pdf (drive.google.com/file/d/1yDh-jUAZvKJjqHNJ_GV0vsxZY7J1ZYYQ), ferramenta-pinion-(ios), ferramenta-pinion-(android); no leakage of Photopea/TinyWow/AlternativeTo",
+    "/ferramentas/18072026v1": "PASS — exactly 1 button: ferramenta-pdf (docs.google.com/document/d/1hLYuCGfK...); no Pinion or Photopea leakage",
+    "/ferramentas/17062026v1": "PASS — exactly 5 tool buttons: Photopea, TinyWow, CapCut Web, Pexels, AlternativeTo; no Pinion leakage",
+    "/videos tabs": "PASS — 5 tabs present: tab-investigacao, tab-seguranca, tab-entretenimento, tab-truques, tab-renda; Renda Extra tab shows the new ganhe-dinheiro-celular card with 19/07/2026 badge"
+  }
+}

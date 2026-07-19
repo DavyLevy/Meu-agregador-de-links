@@ -599,6 +599,35 @@ export const CATEGORIES = [
         },
         tools: [],
       },
+      {
+        id: "ganhe-dinheiro-celular",
+        slug: "19072026v1",
+        date: "19/07/2026",
+        title: "GANHE DINHEIRO AINDA HOJE USANDO APENAS O SEU CELULAR",
+        href: "",
+        pdf: {
+          label: "Baixar o passo a passo (PDF)",
+          description:
+            "Guia completo em PDF para começar a ganhar dinheiro pelo celular.",
+          href: "https://drive.google.com/file/d/1yDh-jUAZvKJjqHNJ_GV0vsxZY7J1ZYYQ/view?usp=sharing",
+        },
+        tools: [
+          {
+            name: "Pinion (iOS)",
+            description:
+              "Baixe o app Pinion na App Store e ganhe cumprindo missões.",
+            href: "https://apps.apple.com/br/app/pinion/id591534544",
+            accent: "#06B6D4",
+          },
+          {
+            name: "Pinion (Android)",
+            description:
+              "Baixe o app Pinion no Google Play e ganhe cumprindo missões.",
+            href: "https://play.google.com/store/apps/details?id=br.com.pinion",
+            accent: "#22C55E",
+          },
+        ],
+      },
     ],
   },
 ];
