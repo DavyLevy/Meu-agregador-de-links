@@ -590,7 +590,7 @@ export const CATEGORIES = [
         slug: "18072026v1",
         date: "18/07/2026",
         title: "VOCÊ TEM DINHEIRO PARA RECEBER AGORA MESMO",
-        href: "",
+        href: "https://www.instagram.com/reel/Da8p_uPK39E/?igsh=dzVjemJ3Z2d0cm80",
         pdf: {
           label: "Baixar o passo a passo (PDF)",
           description:

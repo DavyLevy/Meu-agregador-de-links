@@ -56,10 +56,22 @@ Helpers: `findVideoById`, `findVideoBySlug`, `findVideo`, `getToolGroups`.
   Pexels, AlternativeTo) em Truques — "Vídeo em breve", sem data/slug ainda.
 
 ## Backlog / P1
-- Substituir link de Reel "em breve" do card "5 sites que facilitam a vida"
-  (17/06/2026 → /17062026v1) quando o usuário publicar.
+- Substituir link de Reel "em breve" do card "GANHE DINHEIRO AINDA HOJE
+  USANDO APENAS O SEU CELULAR" (19/07/2026 → /19072026v1) quando publicar.
 - Localizar imagens do Google Drive (foto perfil, globo) para `/public`
   (evitar rate limit).
+
+## Cards recentes (18-19/07/2026)
+- "VOCÊ TEM DINHEIRO PARA RECEBER AGORA MESMO" (Renda Extra, 18/07 → 18072026v1,
+  reel Da8p_uPK39E, PDF passo a passo).
+- "GANHE DINHEIRO AINDA HOJE USANDO APENAS O SEU CELULAR" (Renda Extra, 19/07 →
+  19072026v1, vídeo em breve, PDF + apps Pinion iOS/Android).
+- Reel Da6JcaNqGa1 corrigido: pertence a "5 SITES QUE VÃO FACILITAR A SUA VIDA"
+  (17062026v1), não ao card 18/07.
+- Testing agent iteration_3: tudo pass; único fail (href 18/07 perdido por
+  conflito de edições paralelas no mesmo arquivo) corrigido e verificado.
+- LIÇÃO: nunca rodar search_replace em paralelo no MESMO arquivo (race condition
+  sobrescreve a primeira edição).
 
 ## Correção crítica de rota (17/07/2026)
 - Cards enxutos: contêm APENAS badge de data, título, botão "Assistir ao Vídeo"
