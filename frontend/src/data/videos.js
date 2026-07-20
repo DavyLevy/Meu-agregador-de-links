@@ -176,6 +176,21 @@ export const CATEGORIES = [
         },
         tools: [],
       },
+      {
+        id: "whatsapp-mensagens-lidas",
+        slug: "20072026v1",
+        date: "20/07/2026",
+        title:
+          "SUAS MENSAGENS DO WHATSAPP PODEM ESTAR SENDO LIDAS POR OUTRA PESSOA",
+        href: "",
+        pdf: {
+          label: "Baixar o passo a passo (PDF)",
+          description:
+            "Guia completo em PDF para descobrir e bloquear quem lê suas mensagens do WhatsApp.",
+          href: "https://drive.google.com/file/d/1akgaedwtdE-k_0yCxfUW4UTm-w5pCTlR/view?usp=sharing",
+        },
+        tools: [],
+      },
     ],
   },
   {
@@ -604,7 +619,7 @@ export const CATEGORIES = [
         slug: "19072026v1",
         date: "19/07/2026",
         title: "GANHE DINHEIRO AINDA HOJE USANDO APENAS O SEU CELULAR",
-        href: "",
+        href: "https://www.instagram.com/reel/Da-l354OV1D/?igsh=YmRyZTFvMmp1YW9s",
         pdf: {
           label: "Baixar o passo a passo (PDF)",
           description:
