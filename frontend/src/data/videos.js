@@ -182,12 +182,27 @@ export const CATEGORIES = [
         date: "20/07/2026",
         title:
           "SUAS MENSAGENS DO WHATSAPP PODEM ESTAR SENDO LIDAS POR OUTRA PESSOA",
-        href: "",
+        href: "https://www.instagram.com/reel/DbBrvAqqvFK/?igsh=YnFtcjF2MnRndWE3",
         pdf: {
           label: "Baixar o passo a passo (PDF)",
           description:
             "Guia completo em PDF para descobrir e bloquear quem lê suas mensagens do WhatsApp.",
           href: "https://drive.google.com/file/d/1akgaedwtdE-k_0yCxfUW4UTm-w5pCTlR/view?usp=sharing",
+        },
+        tools: [],
+      },
+      {
+        id: "cpf-emprestimos",
+        slug: "21072026v1",
+        date: "21/07/2026",
+        title:
+          "O SEU CPF PODE TER EMPRÉSTIMOS SEM O SEU CONSENTIMENTO",
+        href: "",
+        pdf: {
+          label: "Baixar o passo a passo (PDF)",
+          description:
+            "Guia completo em PDF para consultar empréstimos feitos no seu CPF.",
+          href: "https://drive.google.com/file/d/1X36nlkeSMQ1tw9XUsVxjlMANR-sC0t0c/view?usp=sharing",
         },
         tools: [],
       },
