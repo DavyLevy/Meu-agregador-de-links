@@ -197,13 +197,21 @@ export const CATEGORIES = [
         date: "21/07/2026",
         title:
           "O SEU CPF PODE TER EMPRÉSTIMOS SEM O SEU CONSENTIMENTO",
-        href: "",
+        href: "https://www.instagram.com/reel/DbGwPOOKOUQ/?igsh=MTdpdTV5YjNtYWJ0MA==",
         pdf: {
           label: "Baixar o passo a passo (PDF)",
           description:
             "Guia completo em PDF para consultar empréstimos feitos no seu CPF.",
           href: "https://drive.google.com/file/d/1X36nlkeSMQ1tw9XUsVxjlMANR-sC0t0c/view?usp=sharing",
         },
+        tools: [],
+      },
+      {
+        id: "historico-localizacao",
+        slug: "23072026v1",
+        date: "23/07/2026",
+        title: "HISTÓRICO SECRETO DA SUA LOCALIZAÇÃO",
+        href: "",
         tools: [],
       },
     ],
