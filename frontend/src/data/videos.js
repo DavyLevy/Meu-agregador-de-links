@@ -212,6 +212,12 @@ export const CATEGORIES = [
         date: "23/07/2026",
         title: "HISTÓRICO SECRETO DA SUA LOCALIZAÇÃO",
         href: "",
+        pdf: {
+          label: "Baixar o passo a passo (PDF)",
+          description:
+            "Guia completo em PDF para acessar o histórico secreto da sua localização.",
+          href: "https://drive.google.com/file/d/1VeQcwtSWzyuNE2_SIGW6TU37ZRfOlpyt/view?usp=sharing",
+        },
         tools: [],
       },
     ],
