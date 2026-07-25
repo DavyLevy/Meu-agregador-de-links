@@ -334,6 +334,20 @@ export const CATEGORIES = [
           },
         ],
       },
+      {
+        id: "youtube-sem-anuncios",
+        slug: "25072026v1",
+        date: "25/07/2026",
+        title: "YOUTUBE GRÁTIS SEM ANÚNCIOS E COM A TELA TRAVADA",
+        href: "",
+        pdf: {
+          label: "Baixar o passo a passo (PDF)",
+          description:
+            "Guia completo em PDF para assistir YouTube sem anúncios e com a tela travada.",
+          href: "https://drive.google.com/file/d/16pLjtwPraUmwFHzMuu_rDHZClEEmgH74/view?usp=sharing",
+        },
+        tools: [],
+      },
     ],
   },
   {
@@ -545,6 +559,14 @@ export const CATEGORIES = [
             accent: "#EF4444",
           },
         ],
+      },
+      {
+        id: "planeta-tecnologia",
+        slug: "24072026v1",
+        date: "24/07/2026",
+        title: "O PLANETA NÃO VAI AGUENTAR O AVANÇO DA TECNOLOGIA",
+        href: "https://www.instagram.com/reel/DbMKgUqKbqx/?igsh=MTBmZGtuZHQyYmJrcA==",
+        tools: [],
       },
     ],
   },
