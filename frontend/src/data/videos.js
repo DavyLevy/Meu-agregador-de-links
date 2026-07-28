@@ -574,12 +574,27 @@ export const CATEGORIES = [
         date: "27/07/2026",
         title:
           "SITES QUE EU PAGARIA CARO PRA TER ACESSO, MAS SÃO TOTALMENTE GRÁTIS – PARTE 1",
-        href: "",
+        href: "https://www.instagram.com/reel/DbTmXFrKZPb/?igsh=MjZ1ZHAyaW9najh6",
         pdf: {
           label: "Baixar o passo a passo (PDF)",
           description:
             "Lista completa em PDF com os sites gratuitos que valem muito dinheiro.",
           href: "https://drive.google.com/file/d/1rQQDKOS05DQaeimjtcLSzNwMrCF1kpHy/view?usp=sharing",
+        },
+        tools: [],
+      },
+      {
+        id: "sites-pagaria-caro-2",
+        slug: "29072026v1",
+        date: "29/07/2026",
+        title:
+          "SITES QUE EU PAGARIA CARO PRA TER ACESSO, MAS SÃO TOTALMENTE GRÁTIS – PARTE 2",
+        href: "",
+        pdf: {
+          label: "Baixar o passo a passo (PDF)",
+          description:
+            "Lista completa em PDF com mais sites gratuitos que valem muito dinheiro.",
+          href: "https://drive.google.com/file/d/13CcmSAPAZUf87-9DFg0OEvaocXlcRQet/view?usp=sharing",
         },
         tools: [],
       },
