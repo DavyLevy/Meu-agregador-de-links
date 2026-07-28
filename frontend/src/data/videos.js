@@ -211,7 +211,7 @@ export const CATEGORIES = [
         slug: "23072026v1",
         date: "23/07/2026",
         title: "HISTÓRICO SECRETO DA SUA LOCALIZAÇÃO",
-        href: "",
+        href: "https://www.instagram.com/reel/DbJlvNAKl2p/?igsh=enZuNGtxNnVrbXQw",
         pdf: {
           label: "Baixar o passo a passo (PDF)",
           description:
@@ -339,7 +339,7 @@ export const CATEGORIES = [
         slug: "25072026v1",
         date: "25/07/2026",
         title: "YOUTUBE GRÁTIS SEM ANÚNCIOS E COM A TELA TRAVADA",
-        href: "",
+        href: "https://www.instagram.com/reel/DbOomjiKlH9/?igsh=MTJpbW50NWlrbTdoZg==",
         pdf: {
           label: "Baixar o passo a passo (PDF)",
           description:
