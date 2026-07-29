@@ -1,0 +1,22 @@
+{
+  "summary": "Frontend-only verification of date/slug swap fix for 'sites pagaria caro' cards Parte 2 and Parte 3, plus regression on Parte 1. All 6 assertions pass.",
+  "backend_issues": {"critical": [], "minor": []},
+  "frontend_issues": {"ui_bugs": [], "integration_issues": [], "design_issues": []},
+  "test_results": {
+    "/28072026v1": "PASS — Parte 2 visible, date 28/07/2026, watch is <A> href=https://www.instagram.com/reel/DbWYFDXq5xF/?igsh=bjdia29qemg1cXFh, access-tools=/ferramentas/28072026v1",
+    "/29072026v1": "PASS — Parte 3 visible, date 29/07/2026, watch is <BUTTON> disabled with 'Vídeo em breve', access-tools=/ferramentas/29072026v1",
+    "/ferramentas/28072026v1": "PASS — exactly 1 ferramenta-pdf, href=https://drive.google.com/file/d/13CcmSAPAZUf87-9DFg0OEvaocXlcRQet/view?usp=sharing",
+    "/ferramentas/29072026v1": "PASS — exactly 1 ferramenta-pdf, href=https://drive.google.com/file/d/1yH9gn5cmZSLO8QmZRa2YjhwMSJ9HMpXh/view?usp=sharing",
+    "/30072026v1": "PASS — video-not-found rendered",
+    "/27072026v1 regression": "PASS — Parte 1 visible, date 27/07/2026, watch href=https://www.instagram.com/reel/DbTmXFrKZPb/?igsh=MjZ1ZHAyaW9najh6, tools page has 1 pdf href=https://drive.google.com/file/d/1rQQDKOS05DQaeimjtcLSzNwMrCF1kpHy/view?usp=sharing"
+  },
+  "test_report_links": [],
+  "action_items": [],
+  "critical_code_review_comments": [],
+  "updated_files": [],
+  "success_rate": {"backend": "N/A", "frontend": "100%"},
+  "seed_data_creation": "None",
+  "retest_needed": false,
+  "should_main_agent_self_test": false,
+  "context_for_next_testing_agent": "Date/slug swap fix verified. Parte 2 = 28072026v1 (active reel), Parte 3 = 29072026v1 (disabled 'Vídeo em breve'), old /30072026v1 resolves to not-found. Each isolated tools page shows only its own PDF button."
+}

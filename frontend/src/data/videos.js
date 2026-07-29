@@ -585,16 +585,31 @@ export const CATEGORIES = [
       },
       {
         id: "sites-pagaria-caro-2",
-        slug: "29072026v1",
-        date: "29/07/2026",
+        slug: "28072026v1",
+        date: "28/07/2026",
         title:
           "SITES QUE EU PAGARIA CARO PRA TER ACESSO, MAS SÃO TOTALMENTE GRÁTIS – PARTE 2",
-        href: "",
+        href: "https://www.instagram.com/reel/DbWYFDXq5xF/?igsh=bjdia29qemg1cXFh",
         pdf: {
           label: "Baixar o passo a passo (PDF)",
           description:
             "Lista completa em PDF com mais sites gratuitos que valem muito dinheiro.",
           href: "https://drive.google.com/file/d/13CcmSAPAZUf87-9DFg0OEvaocXlcRQet/view?usp=sharing",
+        },
+        tools: [],
+      },
+      {
+        id: "sites-pagaria-caro-3",
+        slug: "29072026v1",
+        date: "29/07/2026",
+        title:
+          "SITES QUE EU PAGARIA CARO PARA TER ACESSO, MAS SÃO TOTALMENTE GRÁTIS – PARTE 3",
+        href: "",
+        pdf: {
+          label: "Baixar o passo a passo (PDF)",
+          description:
+            "Lista completa em PDF com mais sites gratuitos que valem muito dinheiro.",
+          href: "https://drive.google.com/file/d/1yH9gn5cmZSLO8QmZRa2YjhwMSJ9HMpXh/view?usp=sharing",
         },
         tools: [],
       },
