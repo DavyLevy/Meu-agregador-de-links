@@ -5,6 +5,7 @@ import {
   FacebookIcon,
   TikTokIcon,
   YouTubeIcon,
+  WhatsAppIcon,
   MailIcon,
   ArrowRightIcon,
   MoneyIcon,
@@ -16,6 +17,9 @@ const GLOBE_IMG =
   "https://lh3.googleusercontent.com/d/1sRtkCgtHMOzEkRmelMrWwyrCGwJTzUzD=w800";
 const MIND7_IMG =
   "https://customer-assets.emergentagent.com/job_link-in-bio-7/artifacts/ul2ff3pv_images.png";
+const PROMOS_IMG =
+  "https://customer-assets-gfyr7b9c.emergentagent.net/job_link-in-bio-7/artifacts/5be2855427b3209a_IMG_2025.PNG";
+const WHATSAPP_GROUP_URL = "https://chat.whatsapp.com/HkFcb8N3ERy8vv1wIkCvjh";
 
 const SOCIALS = [
   {
@@ -41,6 +45,12 @@ const SOCIALS = [
     href: "https://www.youtube.com/@DavyLevyTech",
     icon: YouTubeIcon,
     testid: "social-youtube",
+  },
+  {
+    name: "WhatsApp",
+    href: WHATSAPP_GROUP_URL,
+    icon: WhatsAppIcon,
+    testid: "social-whatsapp",
   },
 ];
 
@@ -176,6 +186,26 @@ export default function LinkInBio() {
 
         {/* Cards */}
         <section className="mt-8 flex flex-col gap-4">
+          {/* Card 0 — GRUPO DE PROMOÇÕES */}
+          <DarkCardLink
+            external
+            href={WHATSAPP_GROUP_URL}
+            title="GRUPO DE PROMOÇÕES"
+            description="Nossa IA garimpa as melhores ofertas e cupons da internet 24h por dia."
+            ctaLabel="Acessar Grupo"
+            testid="card-promos"
+            rightSlot={
+              <div className="w-[96px] h-[96px] sm:w-[108px] sm:h-[108px] rounded-2xl bg-zinc-900 ring-1 ring-white/5 flex items-center justify-center overflow-hidden">
+                <img
+                  src={PROMOS_IMG}
+                  alt="Levy Promos"
+                  className="w-[96%] h-[96%] object-contain"
+                  loading="lazy"
+                />
+              </div>
+            }
+          />
+
           {/* Card 1 — TV GRÁTIS */}
           <DarkCardLink
             external
