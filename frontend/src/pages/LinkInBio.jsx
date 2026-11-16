@@ -19,7 +19,7 @@ const MIND7_IMG =
   "https://customer-assets.emergentagent.com/job_link-in-bio-7/artifacts/ul2ff3pv_images.png";
 const PROMOS_IMG =
   "https://customer-assets-gfyr7b9c.emergentagent.net/job_link-in-bio-7/artifacts/5be2855427b3209a_IMG_2025.PNG";
-const WHATSAPP_GROUP_URL = "https://chat.whatsapp.com/HkFcb8N3ERy8vv1wIkCvjh";
+const WHATSAPP_GROUP_URL = "https://chat.whatsapp.com/DlOi71ILIAW2uceJUbeKll?s=cl&p=i&iam=2";
 
 const SOCIALS = [
   {
