@@ -15,7 +15,7 @@ export default function Promocoes() {
     <section className="flex flex-col gap-4">{cards.map(({title,description,href,to,label,Icon,logo}) => {
       const card = <article className="card-press rounded-[24px] bg-[#0E0E10] text-white p-5 sm:p-6 flex items-center justify-between gap-4">
         <div><h2 className="text-lg font-bold">{title}</h2><p className="mt-2 text-sm text-zinc-400">{description}</p><span className="cta-pill mt-4 inline-flex items-center gap-2 rounded-full bg-[#FF7A1A] text-white text-sm font-semibold px-4 py-2.5">{label}<ArrowRightIcon size={14}/></span></div>
-        <div className="shrink-0 w-[96px] h-[96px] sm:w-[108px] sm:h-[108px] rounded-2xl bg-white flex items-center justify-center p-3">{logo ? <img src={logo} alt={`Logo ${title.replace("PRODUTOS ", "")}`} loading="lazy" className="max-w-full max-h-full object-contain" /> : <div className="rounded-full bg-[#25D366] text-white p-3"><Icon size={44}/></div>}</div>
+        <div className={`shrink-0 w-[96px] h-[96px] sm:w-[108px] sm:h-[108px] rounded-2xl ${to === "/promocoes/mercado-livre" ? "bg-[#FFE600]" : "bg-white"} flex items-center justify-center p-3`}>{logo ? <img src={logo} alt={`Logo ${title.replace("PRODUTOS ", "")}`} loading="lazy" className="max-w-full max-h-full object-contain" /> : <div className="rounded-full bg-[#25D366] text-white p-3"><Icon size={44}/></div>}</div>
       </article>;
       return href ? <a key={title} href={href} target="_blank" rel="noopener noreferrer" className="block no-underline">{card}</a> : <Link key={title} to={to} className="block no-underline">{card}</Link>;
     })}</section>
