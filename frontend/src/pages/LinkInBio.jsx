@@ -188,11 +188,10 @@ export default function LinkInBio() {
         <section className="mt-8 flex flex-col gap-4">
           {/* Card 0 — GRUPO DE PROMOÇÕES */}
           <DarkCardLink
-            external
-            href={WHATSAPP_GROUP_URL}
+            to="/promocoes"
             title="GRUPO DE PROMOÇÕES"
             description="Nossa IA garimpa as melhores ofertas e cupons da internet 24h por dia."
-            ctaLabel="Acessar Grupo"
+            ctaLabel="Acessar"
             testid="card-promos"
             rightSlot={
               <div className="w-[96px] h-[96px] sm:w-[108px] sm:h-[108px] rounded-2xl bg-zinc-900 ring-1 ring-white/5 flex items-center justify-center overflow-hidden">
