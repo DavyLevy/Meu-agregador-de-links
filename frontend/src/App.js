@@ -1,6 +1,8 @@
 import "@/App.css";
 import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
 import LinkInBio from "@/pages/LinkInBio";
+import Promocoes from "@/pages/Promocoes";
+import CatalogoPromocoes from "@/pages/CatalogoPromocoes";
 import Videos from "@/pages/Videos";
 import VideoSingle from "@/pages/VideoSingle";
 import Ferramentas from "@/pages/Ferramentas";
@@ -14,6 +16,8 @@ function App() {
       <BrowserRouter>
         <Routes>
           <Route path="/" element={<LinkInBio />} />
+          <Route path="/promocoes" element={<Promocoes />} />
+          <Route path="/promocoes/:loja" element={<CatalogoPromocoes />} />
           <Route path="/videos" element={<Videos />} />
           <Route path="/ferramentas" element={<Navigate to="/videos" replace />} />
           <Route path="/ferramentas/:slug" element={<Ferramentas />} />
