@@ -1,3 +1,4 @@
+import Kiva from "@/pages/Kiva";
 import "@/App.css";
 import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
 import LinkInBio from "@/pages/LinkInBio";
@@ -16,6 +17,7 @@ function App() {
       <BrowserRouter>
         <Routes>
           <Route path="/" element={<LinkInBio />} />
+          <Route path="/kiva-ai" element={<Kiva />} />
           <Route path="/promocoes" element={<Promocoes />} />
           <Route path="/promocoes/:loja" element={<CatalogoPromocoes />} />
           <Route path="/videos" element={<Videos />} />

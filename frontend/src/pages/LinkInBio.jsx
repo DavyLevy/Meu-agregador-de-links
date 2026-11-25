@@ -205,6 +205,15 @@ export default function LinkInBio() {
             }
           />
 
+          <DarkCardLink
+            to="/kiva-ai"
+            title="KIVA AI"
+            description="Crie vídeos publicitários para divulgar e vender seus produtos utilizando inteligência artificial."
+            ctaLabel="Acessar"
+            testid="card-kiva"
+            rightSlot={<ImageBox src="/kiva-logo.png" alt="KIVA AI" />}
+          />
+
           {/* Card 1 — TV GRÁTIS */}
           <DarkCardLink
             external
